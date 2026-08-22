@@ -1,0 +1,449 @@
+/* ========================================
+   TechNova Solutions - style1.css
+   ======================================== */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background: #f5f7fb;
+    color: #222;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* ---------- CONTAINER ---------- */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+header {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+
+/* ---------- THEME BUTTON ---------- */
+
+#theme-toggle {
+    margin-top: 15px;
+    border: none;
+    background: white;
+    color: #222;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.navbar {
+    background: #ffffff;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #2563eb;
+    font-size: 1.7rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* ---------- MOBILE MENU BUTTON ---------- */
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: #2563eb;
+    color: white;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   PROJECTS SECTION
+   ======================================== */
+
+.projects-section {
+    padding: 80px 0;
+    min-height: 70vh;
+}
+
+.projects-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: #666;
+}
+
+
+/* ========================================
+   PROJECT GRID
+   ======================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+/* ========================================
+   PROJECT CARD
+   ======================================== */
+
+.project-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ========================================
+   PROJECT IMAGES
+   ======================================== */
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+
+/* ---------- PROJECT TITLE ---------- */
+
+.project-card h3 {
+    color: #2563eb;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+
+/* ---------- PROJECT DESCRIPTION ---------- */
+
+.project-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   BUTTON
+   ======================================== */
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn.clicked {
+    transform: scale(0.95);
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* ========================================
+   BACK TO TOP
+   ======================================== */
+
+#back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background: #7c3aed;
+    transform: translateY(-4px);
+}
+
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+
+body.dark-mode {
+    background: #111827;
+    color: #f9fafb;
+}
+
+body.dark-mode .navbar {
+    background: #1f2937;
+}
+
+body.dark-mode .nav-links a {
+    color: #f9fafb;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #60a5fa;
+}
+
+body.dark-mode .logo {
+    color: #60a5fa;
+}
+
+body.dark-mode .section-intro {
+    color: #d1d5db;
+}
+
+body.dark-mode .project-card {
+    background: #1f2937;
+}
+
+body.dark-mode .project-card p {
+    color: #d1d5db;
+}
+
+body.dark-mode .project-card h3 {
+    color: #60a5fa;
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        display: none;
+        flex-direction: column;
+
+        padding: 20px;
+
+        gap: 18px;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    body.dark-mode .nav-links {
+        background: #1f2937;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-section {
+        padding: 55px 0;
+    }
+
+    .projects-section h2 {
+        font-size: 2rem;
+    }
+
+    .project-card img {
+        height: 200px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE DEVICES
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 25px 0;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .projects-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    #back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
