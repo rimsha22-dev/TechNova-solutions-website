@@ -1,5 +1,5 @@
 /* ========================================
-   TechNova Solutions - style1.css
+   TechNova Solutions - Projects CSS
    ======================================== */
 
 /* ---------- RESET ---------- */
@@ -22,7 +22,6 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-
 /* ---------- CONTAINER ---------- */
 
 .container {
@@ -30,7 +29,6 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-
 
 /* ========================================
    HEADER
@@ -53,7 +51,6 @@ header p {
     opacity: 0.9;
 }
 
-
 /* ---------- THEME BUTTON ---------- */
 
 #theme-toggle {
@@ -72,7 +69,6 @@ header p {
 #theme-toggle:hover {
     transform: rotate(20deg) scale(1.1);
 }
-
 
 /* ========================================
    NAVIGATION
@@ -113,8 +109,7 @@ header p {
     color: #2563eb;
 }
 
-
-/* ---------- MOBILE MENU BUTTON ---------- */
+/* ---------- MOBILE MENU ---------- */
 
 .menu-toggle {
     display: none;
@@ -126,7 +121,6 @@ header p {
     border-radius: 6px;
     cursor: pointer;
 }
-
 
 /* ========================================
    PROJECTS SECTION
@@ -151,7 +145,6 @@ header p {
     color: #666;
 }
 
-
 /* ========================================
    PROJECT GRID
    ======================================== */
@@ -162,7 +155,6 @@ header p {
     gap: 30px;
 }
 
-
 /* ========================================
    PROJECT CARD
    ======================================== */
@@ -172,14 +164,10 @@ header p {
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-.project-card.show {
+    /* IMPORTANT:
+       Do not hide cards before JavaScript runs */
     opacity: 1;
     transform: translateY(0);
 }
@@ -188,7 +176,6 @@ header p {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
-
 
 /* ========================================
    PROJECT IMAGES
@@ -203,7 +190,6 @@ header p {
     margin-bottom: 20px;
 }
 
-
 /* ---------- PROJECT TITLE ---------- */
 
 .project-card h3 {
@@ -212,14 +198,12 @@ header p {
     margin-bottom: 12px;
 }
 
-
 /* ---------- PROJECT DESCRIPTION ---------- */
 
 .project-card p {
     color: #666;
     margin-bottom: 20px;
 }
-
 
 /* ========================================
    BUTTON
@@ -245,7 +229,6 @@ header p {
     transform: scale(0.95);
 }
 
-
 /* ========================================
    FOOTER
    ======================================== */
@@ -261,7 +244,6 @@ footer p {
     margin: 0;
 }
 
-
 /* ========================================
    BACK TO TOP
    ======================================== */
@@ -270,24 +252,17 @@ footer p {
     position: fixed;
     right: 25px;
     bottom: 25px;
-
     width: 45px;
     height: 45px;
-
     border: none;
     border-radius: 50%;
-
     background: #2563eb;
     color: white;
-
     font-size: 22px;
     cursor: pointer;
-
     opacity: 0;
     visibility: hidden;
-
     transition: 0.3s;
-
     z-index: 999;
 }
 
@@ -300,7 +275,6 @@ footer p {
     background: #7c3aed;
     transform: translateY(-4px);
 }
-
 
 /* ========================================
    DARK MODE
@@ -343,7 +317,6 @@ body.dark-mode .project-card h3 {
     color: #60a5fa;
 }
 
-
 /* ========================================
    MOBILE RESPONSIVE
    ======================================== */
@@ -366,18 +339,12 @@ body.dark-mode .project-card h3 {
         position: absolute;
         top: 65px;
         left: 0;
-
         width: 100%;
-
         background: white;
-
         display: none;
         flex-direction: column;
-
         padding: 20px;
-
         gap: 18px;
-
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
@@ -405,7 +372,6 @@ body.dark-mode .project-card h3 {
         height: 200px;
     }
 }
-
 
 /* ========================================
    SMALL MOBILE DEVICES
