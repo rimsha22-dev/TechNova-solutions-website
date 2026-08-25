@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,59 +16,128 @@
         content="Explore TechNova Solutions projects including websites, mobile apps, custom software and cloud solutions.">
 
     <link rel="stylesheet" href="style11.css">
+
 </head>
+
 
 <body>
 
-    <!-- Header -->
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
     <header>
+
         <div class="container">
 
-            <h1>TechNova Solutions</h1>
-            <p>Software Development Company</p>
+            <h1>
+                TechNova Solutions
+            </h1>
 
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <p>
+                Software Development Company
+            </p>
+
+
+            <!-- Theme Toggle -->
+
+            <button
+                id="theme-toggle"
+                aria-label="Toggle Dark Mode"
+                type="button">
+
                 🌙
+
             </button>
 
         </div>
+
     </header>
 
 
-    <!-- Navigation -->
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
     <nav class="navbar">
 
-        <h2 class="logo">TechNova</h2>
+        <div class="nav-container">
 
-        <button
-            class="menu-toggle"
-            id="menu-toggle"
-            aria-label="Open Menu">
-            ☰
-        </button>
+            <h2 class="logo">
+                TechNova
+            </h2>
 
-        <div class="nav-links" id="nav-links">
 
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="projects.html">Projects</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="contact.html">Contact</a>
+            <!-- Mobile Menu Button -->
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open Menu"
+                type="button">
+
+                ☰
+
+            </button>
+
+
+            <!-- Navigation Links -->
+
+            <div
+                class="nav-links"
+                id="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a
+                    href="projects.html"
+                    class="active">
+
+                    Projects
+
+                </a>
+
+                <a href="testimonials.html">
+                    Testimonials
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
 
         </div>
 
     </nav>
 
 
-    <!-- Projects Section -->
+
+    <!-- =====================================
+         PROJECTS
+    ====================================== -->
+
     <main>
 
         <section class="projects-section">
 
             <div class="container">
 
-                <h2>Our Projects</h2>
+                <h2>
+                    Our Projects
+                </h2>
 
                 <p class="section-intro">
                     Explore some of our latest software development
@@ -78,107 +148,170 @@
                 <div class="projects-grid">
 
 
-                    <!-- ============================= -->
-                    <!-- PROJECT 1 -->
-                    <!-- ============================= -->
+                    <!-- =================================
+                         PROJECT 1
+                    ================================== -->
 
-                    <div class="project-card">
+                    <article class="project-card">
 
-                        <!-- ⭐ IMAGE CODE START -->
-                        <img
-                            src="images/images1.PNG"
-                            alt="TechNova software development project"
-                            loading="lazy">
-                        <!-- ⭐ IMAGE CODE END -->
+                        <div class="project-image">
 
+                            <img
+                                src="images/images1.png"
+                                alt="TechNova business website project"
+                                loading="lazy">
 
-                        <h3>Business Website</h3>
-
-                        <p>
-                            A modern and responsive business website
-                            designed to help companies build a strong
-                            online presence.
-                        </p>
-
-                        <a href="contact.html" class="btn">
-                            Start a Project
-                        </a>
-
-                    </div>
+                        </div>
 
 
-                    <!-- ============================= -->
-                    <!-- PROJECT 2 -->
-                    <!-- ============================= -->
+                        <div class="project-content">
 
-                    <div class="project-card">
-                        <img
-                            src="images/images2.PNG"
-                            alt="TechNova mobile application"
-                            loading="lazy">
+                            <h3>
+                                Business Website
+                            </h3>
 
-                        <h3>Mobile Application</h3>
+                            <p>
+                                A modern and responsive business website
+                                designed to help companies build a strong
+                                online presence.
+                            </p>
 
-                        <p>
-                            A user-friendly mobile application with
-                            modern design, smooth navigation and
-                            powerful functionality.
-                        </p>
+                            <a
+                                href="contact.html"
+                                class="btn">
 
-                        <a href="contact.html" class="btn">
-                            Start a Project
-                        </a>
+                                Start a Project
 
-                    </div>
+                            </a>
 
+                        </div>
 
-                    <!-- ============================= -->
-                    <!-- PROJECT 3 -->
-                    <!-- ============================= -->
-
-                    <div class="project-card">
-                        <img
-                            src="images/images3.PNG"
-                            alt="TechNova custom software"
-                            loading="lazy">
-
-                        <h3>Custom Software</h3>
-
-                        <p>
-                            Custom software solutions created to
-                            improve business productivity and
-                            simplify daily operations.
-                        </p>
-
-                        <a href="contact.html" class="btn">
-                            Start a Project
-                        </a>
-
-                    </div>
+                    </article>
 
 
-                    <!-- ============================= -->
-                    <!-- PROJECT 4 -->
-                    <!-- ============================= -->
 
-                    <div class="project-card">
-                        <img
-                            src="images/images4.PNG"
-                            alt="TechNova cloud solution"
-                            loading="lazy">
+                    <!-- =================================
+                         PROJECT 2
+                    ================================== -->
 
-                        <h3>Cloud Solution</h3>
+                    <article class="project-card">
 
-                        <p>
-                            Secure and scalable cloud solutions
-                            designed for modern businesses.
-                        </p>
+                        <div class="project-image">
 
-                        <a href="contact.html" class="btn">
-                            Start a Project
-                        </a>
+                            <img
+                                src="images/images2.png"
+                                alt="TechNova mobile application project"
+                                loading="lazy">
 
-                    </div>
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3>
+                                Mobile Application
+                            </h3>
+
+                            <p>
+                                A user-friendly mobile application with
+                                modern design, smooth navigation and
+                                powerful functionality.
+                            </p>
+
+                            <a
+                                href="contact.html"
+                                class="btn">
+
+                                Start a Project
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =================================
+                         PROJECT 3
+                    ================================== -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img
+                                src="images/images3.png"
+                                alt="TechNova custom software project"
+                                loading="lazy">
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3>
+                                Custom Software
+                            </h3>
+
+                            <p>
+                                Custom software solutions created to
+                                improve business productivity and
+                                simplify daily operations.
+                            </p>
+
+                            <a
+                                href="contact.html"
+                                class="btn">
+
+                                Start a Project
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =================================
+                         PROJECT 4
+                    ================================== -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img
+                                src="images/images4.png"
+                                alt="TechNova cloud solution project"
+                                loading="lazy">
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3>
+                                Cloud Solution
+                            </h3>
+
+                            <p>
+                                Secure and scalable cloud solutions
+                                designed for modern businesses.
+                            </p>
+
+                            <a
+                                href="contact.html"
+                                class="btn">
+
+                                Start a Project
+
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
                 </div>
@@ -190,24 +323,47 @@
     </main>
 
 
-    <!-- Footer -->
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
     <footer>
 
-        <p>
-            © <span id="current-year"></span>
-            TechNova Solutions. All Rights Reserved.
-        </p>
+        <div class="container">
+
+            <p>
+                ©
+                <span id="current-year"></span>
+                TechNova Solutions.
+                All Rights Reserved.
+            </p>
+
+        </div>
 
     </footer>
 
 
-    <!-- Back To Top -->
-    <button id="back-to-top" aria-label="Back to top">
+
+    <!-- =====================================
+         BACK TO TOP
+    ====================================== -->
+
+    <button
+        id="back-to-top"
+        aria-label="Back to top"
+        type="button">
+
         ↑
+
     </button>
 
 
-    <!-- JavaScript -->
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
     <script src="script1.js"></script>
 
 </body>
