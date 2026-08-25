@@ -22,13 +22,16 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* ---------- CONTAINER ---------- */
+img {
+    max-width: 100%;
+}
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: auto;
 }
+
 
 /* ========================================
    HEADER
@@ -51,6 +54,7 @@ header p {
     opacity: 0.9;
 }
 
+
 /* ---------- THEME BUTTON ---------- */
 
 #theme-toggle {
@@ -63,12 +67,13 @@ header p {
     border-radius: 50%;
     cursor: pointer;
     font-size: 20px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 #theme-toggle:hover {
     transform: rotate(20deg) scale(1.1);
 }
+
 
 /* ========================================
    NAVIGATION
@@ -90,6 +95,7 @@ header p {
 .logo {
     color: #2563eb;
     font-size: 1.7rem;
+    font-weight: bold;
 }
 
 .nav-links {
@@ -102,14 +108,15 @@ header p {
     text-decoration: none;
     color: #222;
     font-weight: 600;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #2563eb;
 }
 
-/* ---------- MOBILE MENU ---------- */
+
+/* ---------- MOBILE MENU BUTTON ---------- */
 
 .menu-toggle {
     display: none;
@@ -121,6 +128,7 @@ header p {
     border-radius: 6px;
     cursor: pointer;
 }
+
 
 /* ========================================
    PROJECTS SECTION
@@ -145,6 +153,7 @@ header p {
     color: #666;
 }
 
+
 /* ========================================
    PROJECT GRID
    ======================================== */
@@ -154,6 +163,7 @@ header p {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
+
 
 /* ========================================
    PROJECT CARD
@@ -166,8 +176,6 @@ header p {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    /* IMPORTANT:
-       Do not hide cards before JavaScript runs */
     opacity: 1;
     transform: translateY(0);
 }
@@ -176,6 +184,7 @@ header p {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
+
 
 /* ========================================
    PROJECT IMAGES
@@ -190,6 +199,7 @@ header p {
     margin-bottom: 20px;
 }
 
+
 /* ---------- PROJECT TITLE ---------- */
 
 .project-card h3 {
@@ -198,12 +208,14 @@ header p {
     margin-bottom: 12px;
 }
 
+
 /* ---------- PROJECT DESCRIPTION ---------- */
 
 .project-card p {
     color: #666;
     margin-bottom: 20px;
 }
+
 
 /* ========================================
    BUTTON
@@ -217,7 +229,7 @@ header p {
     padding: 11px 22px;
     border-radius: 8px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
@@ -228,6 +240,7 @@ header p {
 .btn.clicked {
     transform: scale(0.95);
 }
+
 
 /* ========================================
    FOOTER
@@ -243,6 +256,7 @@ footer {
 footer p {
     margin: 0;
 }
+
 
 /* ========================================
    BACK TO TOP
@@ -260,9 +274,11 @@ footer p {
     color: white;
     font-size: 22px;
     cursor: pointer;
+
     opacity: 0;
     visibility: hidden;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
     z-index: 999;
 }
 
@@ -275,6 +291,7 @@ footer p {
     background: #7c3aed;
     transform: translateY(-4px);
 }
+
 
 /* ========================================
    DARK MODE
@@ -317,34 +334,55 @@ body.dark-mode .project-card h3 {
     color: #60a5fa;
 }
 
+
 /* ========================================
-   MOBILE RESPONSIVE
+   TABLET & MOBILE
    ======================================== */
 
 @media (max-width: 768px) {
+
+    header {
+        padding: 25px 0;
+    }
 
     header h1 {
         font-size: 1.8rem;
     }
 
-    .navbar {
-        min-height: 65px;
+    header p {
+        font-size: 0.95rem;
     }
 
+    .navbar {
+        min-height: 65px;
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    /* Show hamburger */
     .menu-toggle {
         display: block;
     }
 
+    /* Mobile navigation */
     .nav-links {
         position: absolute;
         top: 65px;
         left: 0;
         width: 100%;
+
         background: white;
+
         display: none;
         flex-direction: column;
+        align-items: center;
+
         padding: 20px;
         gap: 18px;
+
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
@@ -356,8 +394,15 @@ body.dark-mode .project-card h3 {
         background: #1f2937;
     }
 
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+
+    /* Projects */
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     .projects-section {
@@ -368,10 +413,20 @@ body.dark-mode .project-card h3 {
         font-size: 2rem;
     }
 
+    .section-intro {
+        margin-bottom: 35px;
+        padding: 0 10px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
     .project-card img {
         height: 200px;
     }
 }
+
 
 /* ========================================
    SMALL MOBILE DEVICES
@@ -380,27 +435,61 @@ body.dark-mode .project-card h3 {
 @media (max-width: 480px) {
 
     header {
-        padding: 25px 0;
+        padding: 22px 0;
     }
 
     header h1 {
         font-size: 1.5rem;
     }
 
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .navbar {
+        min-height: 60px;
+    }
+
     .logo {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+    }
+
+    .menu-toggle {
+        font-size: 21px;
+        padding: 7px 10px;
+    }
+
+    .nav-links {
+        top: 60px;
+    }
+
+    .projects-section {
+        padding: 45px 0;
     }
 
     .projects-section h2 {
         font-size: 1.8rem;
     }
 
+    .section-intro {
+        font-size: 0.95rem;
+    }
+
     .project-card {
         padding: 18px;
+        border-radius: 12px;
     }
 
     .project-card img {
         height: 180px;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-card p {
+        font-size: 0.95rem;
     }
 
     .btn {
@@ -411,5 +500,7 @@ body.dark-mode .project-card h3 {
     #back-to-top {
         right: 15px;
         bottom: 15px;
+        width: 42px;
+        height: 42px;
     }
 }
