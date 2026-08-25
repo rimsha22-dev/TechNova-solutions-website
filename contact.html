@@ -2,87 +2,181 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>Contact | TechNova Solutions</title>
-
     <meta
         name="description"
         content="Contact TechNova Solutions for web development, mobile apps, custom software and cloud solutions.">
 
+    <title>Contact | TechNova Solutions</title>
+
     <link rel="stylesheet" href="style1s.css">
+
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
     <header>
+
         <div class="container">
 
-            <h1>TechNova Solutions</h1>
+            <h1>
+                TechNova Solutions
+            </h1>
 
-            <p>Let's Build Something Amazing Together</p>
+            <p>
+                Let's Build Something Amazing Together
+            </p>
 
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+
+            <!-- Theme Toggle -->
+
+            <button
+                id="theme-toggle"
+                aria-label="Toggle Dark Mode"
+                type="button">
+
                 🌙
+
             </button>
 
         </div>
+
     </header>
 
 
-    <!-- NAVIGATION -->
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
     <nav class="navbar">
 
-        <h2 class="logo">TechNova</h2>
+        <div class="nav-container">
 
-        <button
-            class="menu-toggle"
-            id="menu-toggle"
-            aria-label="Open Menu">
-            ☰
-        </button>
+            <!-- Logo -->
 
-        <div class="nav-links" id="nav-links">
+            <a
+                href="web.html"
+                class="logo">
 
-            <a href="web.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="projects.html">Projects</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="contact.html">Contact</a>
+                TechNova
+
+            </a>
+
+
+            <!-- Mobile Menu Button -->
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open Menu"
+                aria-expanded="false"
+                type="button">
+
+                ☰
+
+            </button>
+
+
+            <!-- Navigation Links -->
+
+            <div
+                class="nav-links"
+                id="nav-links">
+
+                <a href="web.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="projects.html">
+                    Projects
+                </a>
+
+                <a href="testimonials.html">
+                    Testimonials
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="active">
+
+                    Contact
+
+                </a>
+
+            </div>
 
         </div>
 
     </nav>
 
 
-    <!-- CONTACT SECTION -->
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
     <main>
+
+
+        <!-- =====================================
+             CONTACT SECTION
+        ====================================== -->
 
         <section class="contact-section">
 
             <div class="container">
 
-                <h2>Contact Us</h2>
+
+                <!-- Heading -->
+
+                <h2>
+                    Contact Us
+                </h2>
+
 
                 <p class="section-intro">
-                    Have a project in mind? Send us a message
-                    and our team will get back to you.
+
+                    Have a project in mind?
+                    Send us a message and our team
+                    will get back to you.
+
                 </p>
 
 
-                <!-- CONTACT FORM -->
+
+                <!-- =================================
+                     CONTACT FORM
+                ================================== -->
+
                 <form
                     id="contact-form"
                     action="https://formspree.io/f/xwlezqaa"
                     method="POST">
 
+
                     <!-- NAME -->
+
                     <div class="form-group">
 
                         <label for="name">
@@ -100,7 +194,9 @@
                     </div>
 
 
+
                     <!-- EMAIL -->
+
                     <div class="form-group">
 
                         <label for="email">
@@ -118,7 +214,9 @@
                     </div>
 
 
+
                     <!-- PHONE -->
+
                     <div class="form-group">
 
                         <label for="phone">
@@ -135,7 +233,9 @@
                     </div>
 
 
+
                     <!-- SERVICE -->
+
                     <div class="form-group">
 
                         <label for="service">
@@ -171,12 +271,18 @@
                                 UI/UX Design
                             </option>
 
+                            <option value="digital-solutions">
+                                Digital Solutions
+                            </option>
+
                         </select>
 
                     </div>
 
 
+
                     <!-- MESSAGE -->
+
                     <div class="form-group">
 
                         <label for="message">
@@ -193,7 +299,9 @@
                     </div>
 
 
-                    <!-- SUBMIT -->
+
+                    <!-- SUBMIT BUTTON -->
+
                     <button
                         type="submit"
                         class="btn">
@@ -211,28 +319,139 @@
     </main>
 
 
-    <!-- FOOTER -->
-    <footer>
 
-        <p>
-            © <span id="current-year"></span>
-            TechNova Solutions. All Rights Reserved.
-        </p>
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+
+        <!-- FOOTER CONTENT -->
+
+        <div class="footer-container">
+
+
+            <!-- COMPANY -->
+
+            <div class="footer-column">
+
+                <h2 class="footer-logo">
+
+                    Tech<span>Nova</span>
+
+                </h2>
+
+                <p>
+
+                    Building innovative digital
+                    solutions for modern businesses.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <a href="web.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="projects.html">
+                    Projects
+                </a>
+
+                <a href="testimonials.html">
+                    Testimonials
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <!-- CONTACT / EMAIL -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+
+                <a
+                    href="mailto:rimshaejaz499@gmail.com"
+                    class="footer-email">
+
+                    📧 rimshaejaz499@gmail.com
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+
+                ©
+                <span id="current-year"></span>
+
+                TechNova Solutions.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
 
     </footer>
 
 
-    <!-- BACK TO TOP -->
+
+    <!-- =====================================
+         BACK TO TOP
+    ====================================== -->
+
     <button
         id="back-to-top"
-        aria-label="Back to top">
+        aria-label="Back to top"
+        type="button">
 
         ↑
 
     </button>
 
 
-    <!-- JAVASCRIPT -->
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
     <script src="script1.js"></script>
 
 </body>

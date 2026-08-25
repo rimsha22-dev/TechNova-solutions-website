@@ -1,12 +1,12 @@
-/* =========================================
+/* =========================================================
    TECHNOVA SOLUTIONS
-   PROFESSIONAL STYLE1.CSS
-   ========================================= */
+   CONTACT PAGE - style1s.css
+========================================================= */
 
 
-/* =========================================
+/* =========================================================
    1. RESET
-   ========================================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -26,15 +26,9 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-
-/* =========================================
-   2. GLOBAL
-   ========================================= */
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+img {
+    max-width: 100%;
+    display: block;
 }
 
 a {
@@ -49,39 +43,53 @@ select {
 }
 
 
-/* =========================================
+/* =========================================================
+   2. CONTAINER
+========================================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
    3. HEADER
-   ========================================= */
+========================================================= */
 
 header {
-    background:
-        linear-gradient(
-            135deg,
-            #2563eb,
-            #4f46e5,
-            #7c3aed
-        );
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5,
+        #7c3aed
+    );
 
     color: white;
     text-align: center;
+
     padding: 45px 20px;
 }
 
 header h1 {
     font-size: 2.5rem;
-    margin-bottom: 8px;
     font-weight: 800;
+
+    margin-bottom: 8px;
 }
 
 header p {
     font-size: 1.05rem;
-    opacity: 0.9;
+    opacity: 0.92;
 }
 
 
-/* =========================================
-   4. THEME BUTTON
-   ========================================= */
+/* =========================================================
+   4. THEME TOGGLE
+========================================================= */
 
 #theme-toggle {
     margin-top: 18px;
@@ -112,18 +120,13 @@ header p {
 }
 
 
-/* =========================================
+/* =========================================================
    5. NAVBAR
-   ========================================= */
+========================================================= */
 
 .navbar {
+    width: 100%;
     min-height: 70px;
-
-    padding: 0 5%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
     background: white;
 
@@ -136,11 +139,41 @@ header p {
     z-index: 1000;
 }
 
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+
+    min-height: 70px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   6. LOGO
+========================================================= */
+
 .logo {
     color: #2563eb;
+
     font-size: 1.7rem;
     font-weight: 800;
+
+    transition: color 0.3s ease;
 }
+
+.logo:hover {
+    color: #7c3aed;
+}
+
+
+/* =========================================================
+   7. NAVIGATION LINKS
+========================================================= */
 
 .nav-links {
     display: flex;
@@ -149,13 +182,16 @@ header p {
 }
 
 .nav-links a {
-    color: #374151;
-    font-weight: 600;
-
     position: relative;
 
-    transition:
-        color 0.3s ease;
+    color: #374151;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    padding: 8px 0;
+
+    transition: color 0.3s ease;
 }
 
 .nav-links a::after {
@@ -164,7 +200,7 @@ header p {
     position: absolute;
 
     left: 0;
-    bottom: -7px;
+    bottom: 0;
 
     width: 0;
     height: 2px;
@@ -174,60 +210,67 @@ header p {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: #2563eb;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
 
-/* =========================================
-   6. MOBILE MENU
-   ========================================= */
+/* =========================================================
+   8. MOBILE MENU BUTTON
+========================================================= */
 
 .menu-toggle {
     display: none;
 
+    width: 44px;
+    height: 44px;
+
     border: none;
+    border-radius: 8px;
 
     background: #2563eb;
     color: white;
 
     font-size: 24px;
 
-    padding: 8px 12px;
-
-    border-radius: 8px;
-
     cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 .menu-toggle:hover {
     background: #1d4ed8;
+    transform: scale(1.05);
 }
 
 
-/* =========================================
-   7. CONTACT SECTION
-   ========================================= */
+/* =========================================================
+   9. CONTACT SECTION
+========================================================= */
 
 .contact-section {
-    padding: 90px 0;
+    padding: 80px 0 90px;
+
     min-height: 70vh;
 }
 
 .contact-section h2 {
     text-align: center;
 
-    font-size: 2.6rem;
-
     color: #2563eb;
 
-    margin-bottom: 10px;
+    font-size: 2.7rem;
+    font-weight: 800;
+
+    margin-bottom: 12px;
 }
 
 .section-intro {
@@ -243,30 +286,116 @@ header p {
 }
 
 
-/* =========================================
-   8. CONTACT FORM
-   ========================================= */
+/* =========================================================
+   10. CONTACT INFORMATION
+========================================================= */
+
+.contact-info {
+    width: 100%;
+    max-width: 750px;
+
+    margin: 0 auto 30px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid #e5e7eb;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.11);
+}
+
+.contact-info h3 {
+    color: #2563eb;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    color: #6b7280;
+
+    margin-bottom: 10px;
+}
+
+.contact-info strong {
+    color: #374151;
+}
+
+
+/* =========================================================
+   11. EMAIL LINK
+========================================================= */
+
+.footer-email {
+    margin-top: 12px;
+}
+
+.footer-email a {
+    display: inline-block;
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-decoration 0.3s ease;
+}
+
+.footer-email a:hover {
+    color: #7c3aed;
+
+    transform: translateY(-2px);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   12. CONTACT FORM
+========================================================= */
 
 #contact-form {
     width: 100%;
     max-width: 750px;
 
-    margin: auto;
-
-    background: white;
+    margin: 0 auto;
 
     padding: 40px;
 
+    background: white;
+
     border-radius: 18px;
+
+    border: 1px solid #e5e7eb;
 
     box-shadow:
         0 15px 45px rgba(0, 0, 0, 0.08);
 }
 
 
-/* =========================================
-   9. FORM GROUP
-   ========================================= */
+/* =========================================================
+   13. FORM GROUP
+========================================================= */
 
 .form-group {
     margin-bottom: 22px;
@@ -277,15 +406,16 @@ header p {
 
     margin-bottom: 8px;
 
-    font-weight: 700;
-
     color: #374151;
+
+    font-size: 0.95rem;
+    font-weight: 700;
 }
 
 
-/* =========================================
-   10. INPUTS
-   ========================================= */
+/* =========================================================
+   14. FORM INPUTS
+========================================================= */
 
 .form-group input,
 .form-group textarea,
@@ -295,7 +425,6 @@ header p {
     padding: 14px 16px;
 
     border: 1px solid #d1d5db;
-
     border-radius: 10px;
 
     background: #f9fafb;
@@ -308,9 +437,19 @@ header p {
 
     transition:
         border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   15. INPUT FOCUS
+========================================================= */
 
 .form-group input:focus,
 .form-group textarea:focus,
@@ -324,51 +463,47 @@ header p {
 }
 
 
-/* =========================================
-   11. TEXTAREA
-   ========================================= */
+/* =========================================================
+   16. TEXTAREA
+========================================================= */
 
 .form-group textarea {
-    resize: vertical;
     min-height: 150px;
+
+    resize: vertical;
 }
 
 
-/* =========================================
-   12. SELECT
-   ========================================= */
+/* =========================================================
+   17. SELECT
+========================================================= */
 
 .form-group select {
     cursor: pointer;
 }
 
 
-/* =========================================
-   13. SUBMIT BUTTON
-   ========================================= */
+/* =========================================================
+   18. SUBMIT BUTTON
+========================================================= */
 
 .btn {
-    display: inline-block;
-
     width: 100%;
 
     border: none;
+    border-radius: 10px;
 
     padding: 14px 25px;
 
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #2563eb,
-            #7c3aed
-        );
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
 
     color: white;
 
     font-size: 1rem;
-
     font-weight: 700;
 
     cursor: pointer;
@@ -385,100 +520,14 @@ header p {
         0 12px 25px rgba(37, 99, 235, 0.3);
 }
 
-.btn.clicked {
+.btn:active {
     transform: scale(0.97);
 }
 
 
-/* =========================================
-   14. PROJECT SECTION
-   ========================================= */
-
-.projects-section {
-    padding: 80px 0;
-}
-
-.projects-section h2 {
-    text-align: center;
-
-    color: #2563eb;
-
-    font-size: 2.5rem;
-
-    margin-bottom: 10px;
-}
-
-.projects-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 30px;
-}
-
-.project-card {
-    background: white;
-
-    padding: 25px;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.08);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.project-card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.13);
-}
-
-.project-card img {
-    display: block;
-
-    width: 100%;
-
-    height: 220px;
-
-    object-fit: cover;
-
-    border-radius: 12px;
-
-    margin-bottom: 20px;
-}
-
-.project-card h3 {
-    color: #2563eb;
-
-    font-size: 1.4rem;
-
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    color: #6b7280;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================================
-   15. FOOTER
-   ========================================= */
+/* =========================================================
+   19. FOOTER
+========================================================= */
 
 footer {
     background: #111827;
@@ -487,15 +536,60 @@ footer {
 
     text-align: center;
 
-    padding: 28px 20px;
+    padding: 35px 20px;
 
-    margin-top: 30px;
+    margin-top: 0;
+}
+
+footer .container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+footer p {
+    color: #cbd5e1;
+
+    font-size: 0.95rem;
 }
 
 
-/* =========================================
-   16. BACK TO TOP
-   ========================================= */
+/* =========================================================
+   20. FOOTER EMAIL
+========================================================= */
+
+footer .footer-email {
+    margin: 0;
+}
+
+footer .footer-email a {
+    color: #60a5fa;
+
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+footer .footer-email a:hover {
+    color: #a78bfa;
+
+    transform: translateY(-2px);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   21. BACK TO TOP
+========================================================= */
 
 #back-to-top {
     position: fixed;
@@ -507,7 +601,6 @@ footer {
     height: 48px;
 
     border: none;
-
     border-radius: 50%;
 
     background: #2563eb;
@@ -521,11 +614,12 @@ footer {
     opacity: 0;
     visibility: hidden;
 
+    z-index: 999;
+
     transition:
         opacity 0.3s ease,
-        transform 0.3s ease;
-
-    z-index: 999;
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
 #back-to-top.show {
@@ -534,15 +628,15 @@ footer {
 }
 
 #back-to-top:hover {
-    transform: translateY(-5px);
-
     background: #7c3aed;
+
+    transform: translateY(-5px);
 }
 
 
-/* =========================================
-   17. DARK MODE
-   ========================================= */
+/* =========================================================
+   22. DARK MODE
+========================================================= */
 
 body.dark-mode {
     background: #0f172a;
@@ -553,20 +647,20 @@ body.dark-mode .navbar {
     background: #1e293b;
 }
 
-body.dark-mode .logo {
-    color: #60a5fa;
-}
-
 body.dark-mode .nav-links a {
     color: #e2e8f0;
 }
 
-body.dark-mode .nav-links a:hover {
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active {
     color: #60a5fa;
 }
 
-body.dark-mode .contact-section h2,
-body.dark-mode .projects-section h2 {
+body.dark-mode .logo {
+    color: #60a5fa;
+}
+
+body.dark-mode .contact-section h2 {
     color: #60a5fa;
 }
 
@@ -574,8 +668,31 @@ body.dark-mode .section-intro {
     color: #cbd5e1;
 }
 
+body.dark-mode .contact-info {
+    background: #1e293b;
+
+    border-color: #334155;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .contact-info h3 {
+    color: #60a5fa;
+}
+
+body.dark-mode .contact-info p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .contact-info strong {
+    color: #e2e8f0;
+}
+
 body.dark-mode #contact-form {
     background: #1e293b;
+
+    border-color: #334155;
 
     box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.3);
@@ -598,27 +715,24 @@ body.dark-mode .form-group select {
 body.dark-mode .form-group input:focus,
 body.dark-mode .form-group textarea:focus,
 body.dark-mode .form-group select:focus {
-    background: #0f172a;
-
     border-color: #60a5fa;
+
+    background: #0f172a;
 }
 
-body.dark-mode .project-card {
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+body.dark-mode .nav-links {
     background: #1e293b;
 }
 
-body.dark-mode .project-card h3 {
-    color: #60a5fa;
-}
 
-body.dark-mode .project-card p {
-    color: #cbd5e1;
-}
-
-
-/* =========================================
-   18. TABLET
-   ========================================= */
+/* =========================================================
+   23. TABLET
+========================================================= */
 
 @media (max-width: 768px) {
 
@@ -630,6 +744,14 @@ body.dark-mode .project-card p {
         font-size: 2rem;
     }
 
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-container {
+        min-height: 65px;
+    }
+
     .menu-toggle {
         display: block;
     }
@@ -637,35 +759,41 @@ body.dark-mode .project-card p {
     .nav-links {
         position: absolute;
 
-        top: 70px;
+        top: 65px;
         left: 0;
 
         width: 100%;
-
-        background: white;
 
         display: none;
 
         flex-direction: column;
 
-        padding: 25px;
+        align-items: center;
 
-        gap: 18px;
+        gap: 15px;
+
+        padding: 25px 20px;
+
+        background: white;
 
         box-shadow:
-            0 10px 25px rgba(0, 0, 0, 0.1);
+            0 10px 25px rgba(0, 0, 0, 0.12);
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    body.dark-mode .nav-links {
-        background: #1e293b;
+    .nav-links a {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 8px;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .nav-links a::after {
+        display: none;
     }
 
     .contact-section {
@@ -673,18 +801,22 @@ body.dark-mode .project-card p {
     }
 
     .contact-section h2 {
-        font-size: 2.1rem;
+        font-size: 2.2rem;
     }
 
     #contact-form {
         padding: 30px 25px;
     }
+
+    .contact-info {
+        padding: 25px 20px;
+    }
 }
 
 
-/* =========================================
-   19. SMALL MOBILE
-   ========================================= */
+/* =========================================================
+   24. MOBILE
+========================================================= */
 
 @media (max-width: 480px) {
 
@@ -692,8 +824,12 @@ body.dark-mode .project-card p {
         width: 92%;
     }
 
+    header {
+        padding: 30px 15px;
+    }
+
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.65rem;
     }
 
     header p {
@@ -704,40 +840,68 @@ body.dark-mode .project-card p {
         font-size: 1.4rem;
     }
 
+    .contact-section {
+        padding: 50px 0;
+    }
+
     .contact-section h2 {
-        font-size: 1.8rem;
+        font-size: 1.85rem;
     }
 
     .section-intro {
         font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-info {
+        padding: 22px 15px;
+
+        border-radius: 14px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.3rem;
     }
 
     #contact-form {
         padding: 25px 18px;
-        border-radius: 12px;
+
+        border-radius: 14px;
     }
 
     .form-group input,
     .form-group textarea,
     .form-group select {
         padding: 12px;
+
         font-size: 0.95rem;
     }
 
-    .project-card img {
-        height: 190px;
+    .btn {
+        padding: 13px 20px;
+    }
+
+    footer {
+        padding: 28px 15px;
+    }
+
+    footer p {
+        font-size: 0.85rem;
     }
 
     #back-to-top {
+        width: 44px;
+        height: 44px;
+
         right: 15px;
         bottom: 15px;
     }
 }
 
 
-/* =========================================
-   20. ACCESSIBILITY
-   ========================================= */
+/* =========================================================
+   25. ACCESSIBILITY
+========================================================= */
 
 button:focus,
 input:focus,
@@ -749,9 +913,9 @@ a:focus {
 }
 
 
-/* =========================================
-   21. REDUCED MOTION
-   ========================================= */
+/* =========================================================
+   26. REDUCED MOTION
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 

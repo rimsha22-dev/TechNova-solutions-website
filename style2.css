@@ -1,8 +1,16 @@
 /* =========================================
-   TECHNOVA SERVICES PAGE
+   TECHNOVA SOLUTIONS - SERVICES PAGE
+   style2.css
 ========================================= */
 
+/* ---------- GOOGLE FONT ---------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================
+   RESET
+========================================= */
 
 * {
     margin: 0;
@@ -19,40 +27,76 @@ body {
     background: #f7f8ff;
     color: #202033;
     line-height: 1.7;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
 /* =========================================
-   NAVBAR
+   HEADER
 ========================================= */
 
 .header {
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.07);
+
+    backdrop-filter: blur(12px);
 }
 
 .navbar {
-    max-width: 1200px;
+    width: min(1200px, 92%);
+    min-height: 75px;
+
     margin: auto;
-    padding: 18px 25px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    position: relative;
 }
+
+
+/* =========================================
+   LOGO
+========================================= */
 
 .logo {
     color: #17172b;
     text-decoration: none;
+
     font-size: 28px;
     font-weight: 800;
+
+    letter-spacing: -1px;
 }
 
 .logo span {
     color: #6c4df6;
 }
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
 
 .nav-links {
     display: flex;
@@ -61,11 +105,15 @@ body {
 }
 
 .nav-links a {
+    position: relative;
+
     color: #333;
-    text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    transition: 0.3s;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -73,32 +121,93 @@ body {
     color: #6c4df6;
 }
 
+
+/* Underline */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #6c4df6,
+        #00c6ff
+    );
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
 .menu-toggle {
     display: none;
+
     border: none;
+
     background: #6c4df6;
     color: white;
+
     font-size: 23px;
+
     width: 42px;
     height: 42px;
+
     border-radius: 8px;
+
     cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
+
+.menu-toggle:hover {
+    background: #3926a3;
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   THEME BUTTON
+========================================= */
 
 .theme-btn {
     width: 40px;
     height: 40px;
+
     border: none;
     border-radius: 50%;
+
     background: #eeeaff;
+
     cursor: pointer;
+
     font-size: 18px;
-    transition: 0.3s;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
 .theme-btn:hover {
     transform: rotate(20deg) scale(1.1);
 }
+
 
 /* =========================================
    PAGE HERO
@@ -106,6 +215,7 @@ body {
 
 .page-hero {
     min-height: 420px;
+
     padding: 80px 20px;
 
     display: flex;
@@ -113,19 +223,23 @@ body {
     justify-content: center;
 
     text-align: center;
+
     color: white;
 
     background:
+
         radial-gradient(
             circle at 10% 20%,
             rgba(108, 77, 246, 0.35),
             transparent 35%
         ),
+
         radial-gradient(
             circle at 90% 80%,
             rgba(0, 198, 255, 0.25),
             transparent 35%
         ),
+
         linear-gradient(
             135deg,
             #17152d,
@@ -135,15 +249,22 @@ body {
 
 .page-hero p:first-child {
     color: #a99aff;
+
     font-size: 14px;
     font-weight: 700;
+
     letter-spacing: 3px;
+
     margin-bottom: 10px;
 }
 
 .page-hero h1 {
-    font-size: 55px;
+    font-size: clamp(2.5rem, 6vw, 55px);
+
     font-weight: 800;
+
+    line-height: 1.15;
+
     margin-bottom: 15px;
 }
 
@@ -153,29 +274,41 @@ body {
 
 .page-hero p:last-child {
     max-width: 650px;
+
     margin: auto;
+
     color: #d9d7e8;
+
+    font-size: 16px;
 }
+
 
 /* =========================================
    SECTION TITLE
 ========================================= */
 
 .section-title {
-    max-width: 700px;
+    width: min(700px, 92%);
+
     margin: auto;
+
     text-align: center;
 }
 
 .section-title > p:first-child {
     color: #6c4df6;
+
     font-size: 13px;
     font-weight: 700;
+
     letter-spacing: 2px;
 }
 
 .section-title h2 {
-    font-size: 40px;
+    font-size: clamp(2rem, 4vw, 40px);
+
+    line-height: 1.2;
+
     margin: 8px 0 12px;
 }
 
@@ -187,38 +320,63 @@ body {
     color: #777;
 }
 
+
 /* =========================================
-   SERVICES
+   SERVICES SECTION
 ========================================= */
 
 .services-page {
     padding: 100px 7%;
+
     background: #f7f8ff;
 }
 
 .services-grid {
-    max-width: 1150px;
+    width: min(1150px, 100%);
+
     margin: 60px auto 0;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 25px;
 }
 
+
+/* =========================================
+   SERVICE CARD
+========================================= */
+
 .service-card {
     padding: 35px 28px;
+
     background: white;
+
     border-radius: 20px;
+
     border: 1px solid #eeeaff;
 
-    transition: 0.4s;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+
     border-color: #6c4df6;
-    box-shadow: 0 20px 45px rgba(108, 77, 246, 0.15);
+
+    box-shadow:
+        0 20px 45px rgba(108, 77, 246, 0.15);
 }
+
+
+/* =========================================
+   SERVICE ICON
+========================================= */
 
 .service-icon {
     width: 70px;
@@ -234,52 +392,92 @@ body {
 
     border-radius: 20px;
 
-    background: linear-gradient(
-        135deg,
-        #6c4df6,
-        #00c6ff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #6c4df6,
+            #00c6ff
+        );
+
+    transition:
+        transform 0.3s ease;
 }
+
+.service-card:hover .service-icon {
+    transform:
+        scale(1.08)
+        rotate(5deg);
+}
+
+
+/* =========================================
+   SERVICE CONTENT
+========================================= */
 
 .service-card h3 {
     font-size: 21px;
+
     margin-bottom: 12px;
 }
 
 .service-card p {
     color: #666;
+
     font-size: 14px;
+
     margin-bottom: 20px;
 }
 
+
+/* =========================================
+   SERVICE LIST
+========================================= */
+
 .service-card ul {
     list-style: none;
+
     margin-bottom: 20px;
 }
 
 .service-card li {
     color: #555;
+
     font-size: 14px;
+
     padding: 5px 0;
 }
 
 .service-card li::before {
     content: "✓";
+
     color: #6c4df6;
+
     font-weight: 700;
+
     margin-right: 8px;
 }
 
+
+/* =========================================
+   SERVICE LINK
+========================================= */
+
 .service-link {
     color: #6c4df6;
-    text-decoration: none;
+
     font-weight: 600;
-    transition: 0.3s;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
 }
 
 .service-link:hover {
     color: #3926a3;
+
+    padding-left: 5px;
 }
+
 
 /* =========================================
    PROCESS SECTION
@@ -287,32 +485,53 @@ body {
 
 .process-section {
     padding: 100px 7%;
+
     background: white;
 }
 
 .process-container {
-    max-width: 1100px;
+    width: min(1100px, 100%);
+
     margin: 60px auto 0;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
     gap: 25px;
 }
 
+
+/* =========================================
+   PROCESS CARD
+========================================= */
+
 .process-card {
     text-align: center;
+
     padding: 30px 20px;
 
     border-radius: 18px;
+
     background: #f7f5ff;
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .process-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(108, 77, 246, 0.1);
+
+    box-shadow:
+        0 15px 30px rgba(108, 77, 246, 0.1);
 }
+
+
+/* =========================================
+   PROCESS NUMBER
+========================================= */
 
 .process-number {
     width: 65px;
@@ -326,15 +545,21 @@ body {
 
     border-radius: 50%;
 
-    background: linear-gradient(
-        135deg,
-        #6c4df6,
-        #00c6ff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #6c4df6,
+            #00c6ff
+        );
 
     color: white;
+
     font-weight: 700;
+
     font-size: 18px;
+
+    box-shadow:
+        0 10px 20px rgba(108, 77, 246, 0.2);
 }
 
 .process-card h3 {
@@ -343,8 +568,10 @@ body {
 
 .process-card p {
     color: #666;
+
     font-size: 14px;
 }
+
 
 /* =========================================
    CTA
@@ -352,45 +579,67 @@ body {
 
 .cta {
     padding: 90px 25px;
+
     text-align: center;
 
-    background: linear-gradient(
-        135deg,
-        #6c4df6,
-        #3926a3
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #6c4df6,
+            #3926a3
+        );
 
     color: white;
 }
 
 .cta h2 {
-    font-size: 38px;
+    font-size: clamp(2rem, 5vw, 38px);
+
+    line-height: 1.2;
+
     margin-bottom: 10px;
 }
 
 .cta p {
     color: #dedaff;
+
     margin-bottom: 25px;
 }
 
+
+/* =========================================
+   BUTTON
+========================================= */
+
 .btn {
     display: inline-block;
+
     padding: 13px 28px;
+
     border-radius: 30px;
+
     text-decoration: none;
+
     font-weight: 600;
-    transition: 0.3s;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .secondary-btn {
     color: #6c4df6;
+
     background: white;
 }
 
 .secondary-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
 }
+
 
 /* =========================================
    FOOTER
@@ -398,26 +647,34 @@ body {
 
 .footer {
     padding: 70px 25px 20px;
+
     background: #151426;
+
     color: white;
 }
 
 .footer-content {
-    max-width: 1100px;
+    width: min(1100px, 100%);
+
     margin: auto;
 
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
     gap: 60px;
 }
 
 .footer .logo {
     color: white;
+
     margin-bottom: 15px;
 }
 
 .footer p {
     color: #aaa7b8;
+
     font-size: 14px;
 }
 
@@ -425,30 +682,95 @@ body {
     margin-bottom: 15px;
 }
 
+
+/* =========================================
+   FOOTER QUICK LINKS
+========================================= */
+
 .footer-content > div:nth-child(2) {
     display: flex;
+
     flex-direction: column;
 }
 
 .footer-content a {
     color: #aaa7b8;
+
     text-decoration: none;
+
     margin-bottom: 7px;
-    transition: 0.3s;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
 }
 
 .footer-content a:hover {
     color: #8d7aff;
+
     padding-left: 5px;
 }
 
+
+/* =========================================
+   EMAIL LINK
+========================================= */
+
+.email-link {
+    display: inline-block;
+
+    color: #aaa7b8;
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.email-link:hover {
+    color: #8d7aff;
+
+    transform: translateX(5px);
+
+    text-decoration: underline;
+
+    text-shadow:
+        0 0 10px rgba(141, 122, 255, 0.35);
+}
+
+.email-link:focus-visible {
+    outline: 2px solid #00c6ff;
+
+    outline-offset: 4px;
+
+    border-radius: 4px;
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
 .footer-bottom {
-    max-width: 1100px;
+    width: min(1100px, 100%);
+
     margin: 50px auto 0;
+
     padding-top: 20px;
+
     text-align: center;
+
     border-top: 1px solid #302d43;
 }
+
+.footer-bottom p {
+    font-size: 13px;
+}
+
 
 /* =========================================
    DARK MODE
@@ -456,11 +778,19 @@ body {
 
 body.dark-mode {
     background: #10101a;
+
     color: #f5f5f5;
 }
 
 body.dark-mode .header {
-    background: #181827;
+    background: rgba(24, 24, 39, 0.96);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .logo {
+    color: white;
 }
 
 body.dark-mode .nav-links a {
@@ -472,13 +802,24 @@ body.dark-mode .nav-links a.active {
     color: #9a87ff;
 }
 
+body.dark-mode .theme-btn {
+    background: #292744;
+
+    color: white;
+}
+
 body.dark-mode .services-page {
     background: #10101a;
 }
 
 body.dark-mode .service-card {
     background: #1c1c2b;
+
     border-color: #29293b;
+}
+
+body.dark-mode .service-card h3 {
+    color: white;
 }
 
 body.dark-mode .service-card p,
@@ -494,13 +835,30 @@ body.dark-mode .process-card {
     background: #1c1c2b;
 }
 
+body.dark-mode .process-card h3 {
+    color: white;
+}
+
 body.dark-mode .process-card p {
     color: #bbb;
 }
 
-body.dark-mode .theme-btn {
-    background: #292744;
+body.dark-mode .section-title p:last-child {
+    color: #aaa;
 }
+
+body.dark-mode .nav-links {
+    background: #181827;
+}
+
+body.dark-mode .email-link {
+    color: #bbb;
+}
+
+body.dark-mode .email-link:hover {
+    color: #9a87ff;
+}
+
 
 /* =========================================
    TABLET
@@ -508,8 +866,12 @@ body.dark-mode .theme-btn {
 
 @media (max-width: 1000px) {
 
+    .navbar {
+        width: 94%;
+    }
+
     .nav-links {
-        gap: 12px;
+        gap: 14px;
     }
 
     .nav-links a {
@@ -517,13 +879,20 @@ body.dark-mode .theme-btn {
     }
 
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .process-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .footer-content {
+        gap: 35px;
     }
 }
+
 
 /* =========================================
    MOBILE
@@ -531,8 +900,12 @@ body.dark-mode .theme-btn {
 
 @media (max-width: 700px) {
 
+    /* ---------- Navbar ---------- */
+
     .navbar {
-        position: relative;
+        min-height: 70px;
+
+        width: 92%;
     }
 
     .menu-toggle {
@@ -540,29 +913,57 @@ body.dark-mode .theme-btn {
     }
 
     .nav-links {
-        display: none;
-
         position: absolute;
-        top: 75px;
+
+        top: 70px;
         left: 0;
 
         width: 100%;
+
         padding: 20px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
 
         background: white;
 
-        flex-direction: column;
-        gap: 15px;
+        border-radius: 0 0 15px 15px;
 
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.12);
     }
 
     .nav-links.show {
         display: flex;
     }
 
+    .nav-links a {
+        padding: 11px 5px;
+
+        font-size: 14px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .theme-btn {
+        align-self: flex-start;
+
+        margin-top: 8px;
+    }
+
+
+    /* ---------- Hero ---------- */
+
     .page-hero {
         min-height: 350px;
+
         padding: 60px 20px;
     }
 
@@ -570,30 +971,92 @@ body.dark-mode .theme-btn {
         font-size: 40px;
     }
 
-    .services-page,
+    .page-hero p:last-child {
+        font-size: 14px;
+    }
+
+
+    /* ---------- Services ---------- */
+
+    .services-page {
+        padding: 70px 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 45px;
+
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px 23px;
+    }
+
+
+    /* ---------- Process ---------- */
+
     .process-section {
         padding: 70px 20px;
     }
 
-    .services-grid,
     .process-container {
         grid-template-columns: 1fr;
+
+        margin-top: 45px;
+
+        gap: 20px;
     }
+
+
+    /* ---------- Section Title ---------- */
 
     .section-title h2 {
         font-size: 32px;
+    }
+
+
+    /* ---------- CTA ---------- */
+
+    .cta {
+        padding: 70px 20px;
     }
 
     .cta h2 {
         font-size: 30px;
     }
 
+
+    /* ---------- Footer ---------- */
+
+    .footer {
+        padding: 60px 20px 20px;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
+
         text-align: center;
+
         gap: 35px;
     }
+
+    .footer-content > div:nth-child(2) {
+        align-items: center;
+    }
+
+    .footer-content a:hover {
+        padding-left: 0;
+
+        transform: translateY(-2px);
+    }
+
+    .email-link:hover {
+        transform: translateY(-2px);
+    }
 }
+
 
 /* =========================================
    SMALL MOBILE
@@ -602,22 +1065,108 @@ body.dark-mode .theme-btn {
 @media (max-width: 450px) {
 
     .navbar {
-        padding: 15px;
+        width: 94%;
+
+        padding: 0;
     }
 
     .logo {
         font-size: 23px;
     }
 
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+
+        font-size: 21px;
+    }
+
+    .page-hero {
+        min-height: 320px;
+
+        padding: 50px 18px;
+    }
+
     .page-hero h1 {
         font-size: 32px;
+    }
+
+    .page-hero p:first-child {
+        font-size: 11px;
+
+        letter-spacing: 2px;
     }
 
     .service-card {
         padding: 28px 20px;
     }
 
+    .service-icon {
+        width: 60px;
+        height: 60px;
+
+        font-size: 27px;
+    }
+
     .section-title h2 {
         font-size: 28px;
+    }
+
+    .section-title p:last-child {
+        font-size: 14px;
+    }
+
+    .cta h2 {
+        font-size: 27px;
+    }
+
+    .cta p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+    }
+
+    .footer {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .email-link {
+        font-size: 13px;
+        word-break: break-word;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #00c6ff;
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
