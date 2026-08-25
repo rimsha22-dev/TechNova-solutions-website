@@ -48,30 +48,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuToggle.addEventListener("click", function () {
 
-            navLinks.classList.toggle("active");
+            navLinks.classList.toggle("show");
 
-            if (navLinks.classList.contains("active")) {
+            if (navLinks.classList.contains("show")) {
+
                 menuToggle.textContent = "✕";
-                menuToggle.setAttribute("aria-label", "Close Menu");
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Close Menu"
+                );
+
             } else {
+
                 menuToggle.textContent = "☰";
-                menuToggle.setAttribute("aria-label", "Open Menu");
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open Menu"
+                );
+
             }
 
         });
 
 
-        // Close menu when a link is clicked
+        // Close menu after clicking a link
+
         const links = navLinks.querySelectorAll("a");
 
         links.forEach(function (link) {
 
             link.addEventListener("click", function () {
 
-                navLinks.classList.remove("active");
+                navLinks.classList.remove("show");
 
                 menuToggle.textContent = "☰";
-                menuToggle.setAttribute("aria-label", "Open Menu");
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open Menu"
+                );
 
             });
 
@@ -84,17 +99,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // 3. SMOOTH SCROLLING
     // ========================================
 
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    const anchorLinks =
+        document.querySelectorAll('a[href^="#"]');
 
     anchorLinks.forEach(function (link) {
 
         link.addEventListener("click", function (event) {
 
-            const targetId = this.getAttribute("href");
+            const targetId =
+                this.getAttribute("href");
 
             if (targetId && targetId !== "#") {
 
-                const target = document.querySelector(targetId);
+                const target =
+                    document.querySelector(targetId);
 
                 if (target) {
 
@@ -118,32 +136,38 @@ document.addEventListener("DOMContentLoaded", function () {
     // 4. SCROLL ANIMATION
     // ========================================
 
-    const animatedElements = document.querySelectorAll(
-        ".service-card, .project-card, .testimonial-card, .about-content, .hero-content"
-    );
+    const animatedElements =
+        document.querySelectorAll(
+            ".service-card, .project-card, " +
+            ".testimonial-card, .about-content, " +
+            ".hero-content"
+        );
 
     if ("IntersectionObserver" in window) {
 
-        const observer = new IntersectionObserver(
-            function (entries) {
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
 
-                entries.forEach(function (entry) {
+                    entries.forEach(function (entry) {
 
-                    if (entry.isIntersecting) {
+                        if (entry.isIntersecting) {
 
-                        entry.target.classList.add("show");
+                            entry.target.classList.add("show");
 
-                        observer.unobserve(entry.target);
+                            observer.unobserve(
+                                entry.target
+                            );
 
-                    }
+                        }
 
-                });
+                    });
 
-            },
-            {
-                threshold: 0.15
-            }
-        );
+                },
+                {
+                    threshold: 0.15
+                }
+            );
 
         animatedElements.forEach(function (element) {
             observer.observe(element);
@@ -151,7 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     } else {
 
-        // Fallback for older browsers
         animatedElements.forEach(function (element) {
             element.classList.add("show");
         });
@@ -163,83 +186,111 @@ document.addEventListener("DOMContentLoaded", function () {
     // 5. CONTACT FORM VALIDATION
     // ========================================
 
-    const contactForm = document.getElementById("contact-form");
+    const contactForm =
+        document.getElementById("contact-form");
 
     if (contactForm) {
 
-        contactForm.addEventListener("submit", function (event) {
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
 
-            const name = document.getElementById("name");
-            const email = document.getElementById("email");
-            const message = document.getElementById("message");
+                const name =
+                    document.getElementById("name");
 
-            if (!name || !email || !message) {
-                return;
+                const email =
+                    document.getElementById("email");
+
+                const message =
+                    document.getElementById("message");
+
+
+                if (!name || !email || !message) {
+                    return;
+                }
+
+
+                const nameValue =
+                    name.value.trim();
+
+                const emailValue =
+                    email.value.trim();
+
+                const messageValue =
+                    message.value.trim();
+
+
+                // Name validation
+
+                if (nameValue === "") {
+
+                    event.preventDefault();
+
+                    alert("Please enter your name.");
+
+                    name.focus();
+
+                    return;
+                }
+
+
+                // Email validation
+
+                if (emailValue === "") {
+
+                    event.preventDefault();
+
+                    alert("Please enter your email.");
+
+                    email.focus();
+
+                    return;
+                }
+
+
+                // Email format validation
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(emailValue)) {
+
+                    event.preventDefault();
+
+                    alert(
+                        "Please enter a valid email address."
+                    );
+
+                    email.focus();
+
+                    return;
+                }
+
+
+                // Message validation
+
+                if (messageValue === "") {
+
+                    event.preventDefault();
+
+                    alert("Please enter your message.");
+
+                    message.focus();
+
+                    return;
+                }
+
+                /*
+                    Do not use event.preventDefault()
+                    here.
+
+                    This allows Formspree to receive
+                    the form when the HTML form has
+                    the correct Formspree action.
+                */
+
             }
-
-            const nameValue = name.value.trim();
-            const emailValue = email.value.trim();
-            const messageValue = message.value.trim();
-
-
-            // Name validation
-            if (nameValue === "") {
-
-                event.preventDefault();
-
-                alert("Please enter your name.");
-                name.focus();
-
-                return;
-            }
-
-
-            // Email validation
-            if (emailValue === "") {
-
-                event.preventDefault();
-
-                alert("Please enter your email.");
-                email.focus();
-
-                return;
-            }
-
-
-            // Email format validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!emailPattern.test(emailValue)) {
-
-                event.preventDefault();
-
-                alert("Please enter a valid email address.");
-                email.focus();
-
-                return;
-            }
-
-
-            // Message validation
-            if (messageValue === "") {
-
-                event.preventDefault();
-
-                alert("Please enter your message.");
-                message.focus();
-
-                return;
-            }
-
-            /*
-                IMPORTANT:
-                Do NOT use event.preventDefault() here.
-
-                This allows Formspree to receive the form
-                if your HTML form has a correct Formspree action.
-            */
-
-        });
+        );
 
     }
 
@@ -248,29 +299,40 @@ document.addEventListener("DOMContentLoaded", function () {
     // 6. BACK TO TOP BUTTON
     // ========================================
 
-    const backToTop = document.getElementById("back-to-top");
+    const backToTop =
+        document.getElementById("back-to-top");
 
     if (backToTop) {
 
-        window.addEventListener("scroll", function () {
+        window.addEventListener(
+            "scroll",
+            function () {
 
-            if (window.scrollY > 400) {
-                backToTop.classList.add("show");
-            } else {
-                backToTop.classList.remove("show");
+                if (window.scrollY > 400) {
+
+                    backToTop.classList.add("show");
+
+                } else {
+
+                    backToTop.classList.remove("show");
+
+                }
+
             }
+        );
 
-        });
 
+        backToTop.addEventListener(
+            "click",
+            function () {
 
-        backToTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        });
+            }
+        );
 
     }
 
@@ -279,11 +341,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // 7. CURRENT YEAR
     // ========================================
 
-    const yearElement = document.getElementById("current-year");
+    const yearElement =
+        document.getElementById("current-year");
 
     if (yearElement) {
 
-        yearElement.textContent = new Date().getFullYear();
+        yearElement.textContent =
+            new Date().getFullYear();
 
     }
 
@@ -292,23 +356,31 @@ document.addEventListener("DOMContentLoaded", function () {
     // 8. BUTTON CLICK EFFECT
     // ========================================
 
-    const buttons = document.querySelectorAll("button, .btn");
+    const buttons =
+        document.querySelectorAll(
+            "button, .btn"
+        );
 
     buttons.forEach(function (button) {
 
-        button.addEventListener("click", function () {
+        button.addEventListener(
+            "click",
+            function () {
 
-            this.classList.add("clicked");
+                this.classList.add("clicked");
 
-            const currentButton = this;
+                const currentButton = this;
 
-            setTimeout(function () {
+                setTimeout(function () {
 
-                currentButton.classList.remove("clicked");
+                    currentButton.classList.remove(
+                        "clicked"
+                    );
 
-            }, 200);
+                }, 200);
 
-        });
+            }
+        );
 
     });
 

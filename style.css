@@ -1,8 +1,14 @@
-/* =====================================
+/* =========================================
    TECHNOVA SOLUTIONS - ABOUT PAGE
-===================================== */
+   Fully Responsive CSS
+========================================= */
+
+/* ---------- GOOGLE FONT ---------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ---------- RESET ---------- */
 
 * {
     margin: 0;
@@ -19,15 +25,26 @@ body {
     background: #f7f9ff;
     color: #1d1d2c;
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
-/* =====================================
-   HEADER & NAVBAR
-===================================== */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
 
 .header {
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
@@ -35,9 +52,12 @@ body {
 }
 
 .navbar {
+    width: 100%;
     max-width: 1200px;
+    min-height: 75px;
     margin: auto;
-    padding: 18px 25px;
+    padding: 15px 25px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,15 +68,20 @@ body {
     font-weight: 800;
     text-decoration: none;
     color: #17172b;
+    white-space: nowrap;
 }
 
 .logo span {
     color: #6c4df6;
 }
 
+
+/* ---------- NAV LINKS ---------- */
+
 .nav-links {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 22px;
 }
 
@@ -65,7 +90,7 @@ body {
     color: #333;
     font-size: 14px;
     font-weight: 500;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -73,7 +98,8 @@ body {
     color: #6c4df6;
 }
 
-/* Theme button */
+
+/* ---------- THEME BUTTON ---------- */
 
 .theme-btn {
     border: none;
@@ -81,47 +107,81 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
     font-size: 18px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .theme-btn:hover {
     transform: rotate(20deg) scale(1.1);
 }
 
-/* Mobile menu */
+
+/* ---------- MOBILE MENU BUTTON ---------- */
 
 .menu-toggle {
     display: none;
+
     border: none;
     background: #6c4df6;
     color: white;
-    font-size: 22px;
+
     width: 42px;
     height: 42px;
+
     border-radius: 8px;
+
     cursor: pointer;
+    font-size: 22px;
+
+    align-items: center;
+    justify-content: center;
 }
 
-/* =====================================
+
+/* =========================================
    PAGE HERO
-===================================== */
+========================================= */
 
 .page-hero {
     min-height: 400px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 70px 20px;
 
     background:
-        radial-gradient(circle at top left, rgba(108, 77, 246, 0.35), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(0, 200, 255, 0.25), transparent 35%),
-        linear-gradient(135deg, #17152d, #292152);
-    
+        radial-gradient(
+            circle at top left,
+            rgba(108, 77, 246, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(0, 200, 255, 0.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #17152d,
+            #292152
+        );
+
     color: white;
+}
+
+.page-hero > div {
+    width: 100%;
+    max-width: 750px;
 }
 
 .page-hero p:first-child {
@@ -135,6 +195,7 @@ body {
 .page-hero h1 {
     font-size: 55px;
     font-weight: 800;
+    line-height: 1.2;
     margin-bottom: 15px;
 }
 
@@ -149,26 +210,33 @@ body {
     font-size: 17px;
 }
 
-/* =====================================
+
+/* =========================================
    ABOUT SECTION
-===================================== */
+========================================= */
 
 .about-section {
+    width: 100%;
     max-width: 1150px;
+
     margin: 100px auto;
     padding: 0 25px;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     align-items: center;
-    gap: 80px;
+
+    gap: 70px;
 }
 
-/* About image/card */
+
+/* ---------- ABOUT IMAGE ---------- */
 
 .about-image {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .about-card {
@@ -184,22 +252,33 @@ body {
     border-radius: 35px;
 
     background:
-        linear-gradient(135deg, #6c4df6, #00c6ff);
+        linear-gradient(
+            135deg,
+            #6c4df6,
+            #00c6ff
+        );
 
     box-shadow:
         0 25px 60px rgba(108, 77, 246, 0.3);
 
     transform: rotate(-3deg);
+
     transition: 0.4s ease;
 }
 
 .about-card:hover {
     transform: rotate(0deg) translateY(-10px);
+
     box-shadow:
         0 35px 70px rgba(108, 77, 246, 0.4);
 }
 
-/* About content */
+
+/* ---------- ABOUT CONTENT ---------- */
+
+.about-content {
+    width: 100%;
+}
 
 .section-label {
     color: #6c4df6;
@@ -225,36 +304,57 @@ body {
     margin-bottom: 18px;
 }
 
-/* =====================================
+
+/* =========================================
    BUTTONS
-===================================== */
+========================================= */
 
 .btn {
     display: inline-block;
+
     text-decoration: none;
+
     padding: 13px 27px;
+
     border-radius: 30px;
+
     font-weight: 600;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
+
+    max-width: 100%;
 }
 
 .primary-btn {
     margin-top: 12px;
-    background: linear-gradient(135deg, #6c4df6, #8d65ff);
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4df6,
+            #8d65ff
+        );
+
     color: white;
-    box-shadow: 0 10px 25px rgba(108, 77, 246, 0.25);
+
+    box-shadow:
+        0 10px 25px rgba(108, 77, 246, 0.25);
 }
 
 .primary-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(108, 77, 246, 0.35);
+
+    box-shadow:
+        0 15px 30px rgba(108, 77, 246, 0.35);
 }
 
-/* =====================================
+
+/* =========================================
    SECTION TITLES
-===================================== */
+========================================= */
 
 .section-title {
+    width: 100%;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -269,47 +369,61 @@ body {
 
 .section-title h2 {
     font-size: 40px;
+    line-height: 1.3;
 }
 
 .section-title h2 span {
     color: #6c4df6;
 }
 
-/* =====================================
+
+/* =========================================
    MISSION SECTION
-===================================== */
+========================================= */
 
 .mission-section {
+    width: 100%;
     padding: 90px 25px;
     background: white;
 }
 
 .mission-container {
+    width: 100%;
     max-width: 1050px;
+
     margin: auto;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
     gap: 30px;
 }
 
 .mission-card {
     padding: 40px;
+
     border-radius: 20px;
+
     background: #f7f5ff;
+
     border: 1px solid #ebe7ff;
+
     text-align: center;
-    transition: 0.4s;
+
+    transition: 0.4s ease;
 }
 
 .mission-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .mission-icon {
     width: 75px;
     height: 75px;
+
     margin: 0 auto 20px;
 
     display: flex;
@@ -317,7 +431,14 @@ body {
     justify-content: center;
 
     border-radius: 50%;
-    background: linear-gradient(135deg, #6c4df6, #00c6ff);
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4df6,
+            #00c6ff
+        );
+
     font-size: 32px;
 }
 
@@ -330,39 +451,53 @@ body {
     color: #666;
 }
 
-/* =====================================
+
+/* =========================================
    WHY US
-===================================== */
+========================================= */
 
 .why-us {
+    width: 100%;
     padding: 100px 25px;
+
     background: #f7f9ff;
 }
 
 .features {
+    width: 100%;
     max-width: 1100px;
+
     margin: auto;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
     gap: 22px;
 }
 
 .feature-card {
+    width: 100%;
+
     background: white;
+
     padding: 30px 22px;
+
     border-radius: 18px;
+
     text-align: center;
 
     border: 1px solid #eee;
 
-    transition: 0.4s;
+    transition: 0.4s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
+
     border-color: #6c4df6;
-    box-shadow: 0 20px 40px rgba(108, 77, 246, 0.12);
+
+    box-shadow:
+        0 20px 40px rgba(108, 77, 246, 0.12);
 }
 
 .feature-card > div {
@@ -380,12 +515,16 @@ body {
     font-size: 14px;
 }
 
-/* =====================================
+
+/* =========================================
    CALL TO ACTION
-===================================== */
+========================================= */
 
 .cta {
+    width: 100%;
+
     text-align: center;
+
     padding: 90px 25px;
 
     background:
@@ -400,6 +539,7 @@ body {
 
 .cta h2 {
     font-size: 38px;
+    line-height: 1.3;
     margin-bottom: 12px;
 }
 
@@ -415,25 +555,36 @@ body {
 
 .secondary-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* =====================================
+
+/* =========================================
    FOOTER
-===================================== */
+========================================= */
 
 .footer {
+    width: 100%;
+
     background: #151426;
     color: white;
+
     padding: 70px 25px 20px;
 }
 
 .footer-content {
+    width: 100%;
     max-width: 1100px;
+
     margin: auto;
 
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
     gap: 60px;
 }
 
@@ -458,9 +609,12 @@ body {
 
 .footer-content a {
     text-decoration: none;
+
     color: #aaa7b8;
+
     margin-bottom: 7px;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
 }
 
 .footer-content a:hover {
@@ -469,16 +623,22 @@ body {
 }
 
 .footer-bottom {
+    width: 100%;
     max-width: 1100px;
+
     margin: 50px auto 0;
+
     padding-top: 20px;
+
     text-align: center;
+
     border-top: 1px solid #302d43;
 }
 
-/* =====================================
+
+/* =========================================
    DARK MODE
-===================================== */
+========================================= */
 
 body.dark-mode {
     background: #10101a;
@@ -487,6 +647,10 @@ body.dark-mode {
 
 body.dark-mode .header {
     background: #181827;
+}
+
+body.dark-mode .logo {
+    color: white;
 }
 
 body.dark-mode .nav-links a {
@@ -526,14 +690,15 @@ body.dark-mode .theme-btn {
     background: #292744;
 }
 
-/* =====================================
-   TABLET
-===================================== */
 
-@media (max-width: 900px) {
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
 
     .nav-links {
-        gap: 12px;
+        gap: 14px;
     }
 
     .nav-links a {
@@ -547,33 +712,48 @@ body.dark-mode .theme-btn {
     .about-card {
         width: 280px;
         height: 280px;
+        font-size: 90px;
     }
 
     .features {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .footer-content {
+        gap: 35px;
+    }
 }
 
-/* =====================================
-   MOBILE
-===================================== */
 
-@media (max-width: 700px) {
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
 
     .navbar {
-        position: relative;
+        min-height: 70px;
+        padding: 14px 18px;
+    }
+
+    .logo {
+        font-size: 24px;
     }
 
     .menu-toggle {
-        display: block;
+        display: flex;
     }
 
     .nav-links {
         display: none;
 
         position: absolute;
-        top: 75px;
+
+        top: 70px;
         left: 0;
+
         width: 100%;
 
         padding: 20px;
@@ -581,27 +761,78 @@ body.dark-mode .theme-btn {
         background: white;
 
         flex-direction: column;
-        gap: 15px;
 
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        align-items: stretch;
+
+        gap: 5px;
+
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.12);
     }
 
     .nav-links.show {
         display: flex;
     }
 
+    .nav-links a {
+        width: 100%;
+
+        padding: 12px 10px;
+
+        text-align: center;
+
+        font-size: 15px;
+    }
+
+    .theme-btn {
+        margin: 8px auto 0;
+    }
+
+
+    /* DARK MOBILE MENU */
+
+    body.dark-mode .nav-links {
+        background: #181827;
+    }
+
+
+    /* HERO */
+
     .page-hero {
-        min-height: 350px;
+        min-height: 330px;
+
+        padding: 60px 20px;
     }
 
     .page-hero h1 {
-        font-size: 40px;
+        font-size: 42px;
     }
+
+    .page-hero p:last-child {
+        font-size: 15px;
+    }
+
+
+    /* ABOUT */
 
     .about-section {
         grid-template-columns: 1fr;
+
         text-align: center;
+
         margin: 70px auto;
+
+        padding: 0 20px;
+
+        gap: 50px;
+    }
+
+    .about-image {
+        order: 1;
+    }
+
+    .about-content {
+        order: 2;
     }
 
     .about-card {
@@ -614,37 +845,112 @@ body.dark-mode .theme-btn {
         font-size: 32px;
     }
 
+    .about-content h2 span {
+        display: inline;
+    }
+
+
+    /* MISSION */
+
+    .mission-section {
+        padding: 70px 20px;
+    }
+
     .mission-container {
         grid-template-columns: 1fr;
     }
 
+    .mission-card {
+        padding: 32px 22px;
+    }
+
+
+    /* WHY US */
+
+    .why-us {
+        padding: 70px 20px;
+    }
+
     .features {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+
+
+    /* SECTION TITLE */
+
+    .section-title {
+        margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 70px 20px;
     }
 
     .cta h2 {
-        font-size: 29px;
+        font-size: 30px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 60px 20px 20px;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
+
         text-align: center;
+
         gap: 35px;
+    }
+
+    .footer-content > div:nth-child(2) {
+        align-items: center;
     }
 }
 
-/* =====================================
-   SMALL MOBILE
-===================================== */
 
-@media (max-width: 450px) {
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
 
     .navbar {
-        padding: 15px;
+        padding: 13px 15px;
     }
 
     .logo {
-        font-size: 23px;
+        font-size: 22px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+
+    /* HERO */
+
+    .page-hero {
+        min-height: 300px;
+
+        padding: 50px 15px;
+    }
+
+    .page-hero p:first-child {
+        font-size: 11px;
+        letter-spacing: 2px;
     }
 
     .page-hero h1 {
@@ -653,6 +959,14 @@ body.dark-mode .theme-btn {
 
     .page-hero p:last-child {
         font-size: 14px;
+    }
+
+
+    /* ABOUT */
+
+    .about-section {
+        margin: 55px auto;
+        padding: 0 18px;
     }
 
     .about-card {
@@ -665,11 +979,97 @@ body.dark-mode .theme-btn {
         font-size: 27px;
     }
 
+    .about-content p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+
+    /* MISSION */
+
+    .mission-section {
+        padding: 60px 18px;
+    }
+
     .mission-card {
-        padding: 28px 20px;
+        padding: 28px 18px;
+    }
+
+
+    /* FEATURES */
+
+    .why-us {
+        padding: 60px 18px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* SECTION TITLE */
+
+    .section-title h2 {
+        font-size: 29px;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 60px 18px;
+    }
+
+    .cta h2 {
+        font-size: 26px;
+    }
+
+    .cta p {
+        font-size: 14px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 50px 18px 20px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
+
+@media (max-width: 350px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .page-hero h1 {
+        font-size: 28px;
+    }
+
+    .about-card {
+        width: 180px;
+        height: 180px;
+        font-size: 55px;
+    }
+
+    .about-content h2 {
+        font-size: 24px;
     }
 
     .section-title h2 {
-        font-size: 30px;
+        font-size: 26px;
     }
 }
