@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://web.html.com/sitemap.xml
+Sitemap: https://rimsha22-dev.github.io/TechNova-solutions-website/sitemap.xml
