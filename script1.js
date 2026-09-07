@@ -1,366 +1,254 @@
-/* =====================================
-   TECHNOVA SOLUTIONS - script1.js
-   ===================================== */
+/* =====================================================
+   TECHNOVA SOLUTIONS
+   script1.js
+   Mobile Menu + Dark Mode + AI Chatbot
+===================================================== */
 
+document.addEventListener("DOMContentLoaded", function () {
 
-/* =====================================
-   1. CURRENT YEAR
-   ===================================== */
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
 
-const currentYear = document.getElementById("current-year");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
 
-if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-}
+    if (menuToggle && navLinks) {
 
+        menuToggle.addEventListener("click", function () {
 
-/* =====================================
-   2. DARK MODE
-   ===================================== */
+            navLinks.classList.toggle("active");
 
-const themeToggle = document.getElementById("theme-toggle");
+            const isOpen = navLinks.classList.contains("active");
 
-if (themeToggle) {
+            menuToggle.setAttribute("aria-expanded", isOpen);
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem("theme");
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
 
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        themeToggle.textContent = "☀️";
+        // Close menu when a link is clicked
+        const links = navLinks.querySelectorAll("a");
+
+        links.forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            });
+        });
     }
 
-    themeToggle.addEventListener("click", () => {
 
-        document.body.classList.toggle("dark-mode");
+    /* =====================================================
+       DARK MODE
+    ===================================================== */
 
-        const isDark =
-            document.body.classList.contains("dark-mode");
+    const themeToggle = document.getElementById("theme-toggle");
 
-        if (isDark) {
+    if (themeToggle) {
+
+        const savedTheme = localStorage.getItem("technova-theme");
+
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
             themeToggle.textContent = "☀️";
-            localStorage.setItem("theme", "dark");
         } else {
             themeToggle.textContent = "🌙";
-            localStorage.setItem("theme", "light");
         }
 
-    });
-}
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+
+                localStorage.setItem("technova-theme", "dark");
+                themeToggle.textContent = "☀️";
+
+            } else {
+
+                localStorage.setItem("technova-theme", "light");
+                themeToggle.textContent = "🌙";
+            }
+        });
+    }
 
 
-/* =====================================
-   3. MOBILE NAVIGATION
-   ===================================== */
+    /* =====================================================
+       AI CHATBOT
+    ===================================================== */
 
-const menuToggle =
-    document.getElementById("menu-toggle");
+    const chatButton = document.getElementById("chat-button");
+    const chatBox = document.getElementById("chat-box");
+    const chatClose = document.getElementById("chat-close");
+    const chatForm = document.getElementById("chat-form");
+    const chatInput = document.getElementById("chat-input");
+    const chatMessages = document.getElementById("chat-messages");
 
-const navLinks =
-    document.getElementById("nav-links");
+    // Open chatbot
+    if (chatButton && chatBox) {
 
-if (menuToggle && navLinks) {
+        chatButton.addEventListener("click", function () {
+            chatBox.classList.add("show");
 
-    menuToggle.addEventListener("click", () => {
+            if (chatInput) {
+                chatInput.focus();
+            }
+        });
+    }
 
-        navLinks.classList.toggle("active");
+    // Close chatbot
+    if (chatClose && chatBox) {
 
-        const isOpen =
-            navLinks.classList.contains("active");
+        chatClose.addEventListener("click", function () {
+            chatBox.classList.remove("show");
+        });
+    }
 
-        menuToggle.textContent =
-            isOpen ? "✕" : "☰";
 
-        menuToggle.setAttribute(
-            "aria-label",
-            isOpen ? "Close Menu" : "Open Menu"
+    /* =====================================================
+       CHATBOT RESPONSE
+    ===================================================== */
+
+    if (chatForm && chatInput && chatMessages) {
+
+        chatForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const message = chatInput.value.trim();
+
+            if (message === "") {
+                return;
+            }
+
+            // User message
+            addMessage(message, "user");
+
+            chatInput.value = "";
+
+            // Bot thinking message
+            const thinkingMessage = addMessage(
+                "Typing...",
+                "bot"
+            );
+
+            setTimeout(function () {
+
+                if (thinkingMessage) {
+                    thinkingMessage.remove();
+                }
+
+                const response = getBotResponse(message);
+
+                addMessage(response, "bot");
+
+            }, 700);
+        });
+    }
+
+
+    /* =====================================================
+       ADD CHAT MESSAGE
+    ===================================================== */
+
+    function addMessage(message, sender) {
+
+        if (!chatMessages) {
+            return null;
+        }
+
+        const messageElement = document.createElement("div");
+
+        messageElement.classList.add(
+            "chat-message",
+            sender
         );
 
-    });
+        messageElement.textContent = message;
 
+        chatMessages.appendChild(messageElement);
 
-    // Close menu when a link is clicked
-    const links =
-        navLinks.querySelectorAll("a");
+        chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    links.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            navLinks.classList.remove("active");
-
-            menuToggle.textContent = "☰";
-
-            menuToggle.setAttribute(
-                "aria-label",
-                "Open Menu"
-            );
-
-        });
-
-    });
-}
-
-
-/* =====================================
-   4. CONTACT FORM
-   ===================================== */
-
-const contactForm =
-    document.getElementById("contact-form");
-
-if (contactForm) {
-
-    const nameInput =
-        document.getElementById("name");
-
-    const emailInput =
-        document.getElementById("email");
-
-    const phoneInput =
-        document.getElementById("phone");
-
-    const serviceInput =
-        document.getElementById("service");
-
-    const messageInput =
-        document.getElementById("message");
-
-
-    /*
-     * Show validation error
-     */
-    function showError(input, message) {
-
-        input.style.borderColor = "red";
-
-        let error =
-            input.parentElement.querySelector(".error-message");
-
-        if (!error) {
-
-            error =
-                document.createElement("small");
-
-            error.className =
-                "error-message";
-
-            error.style.color = "red";
-            error.style.display = "block";
-            error.style.marginTop = "5px";
-
-            input.parentElement.appendChild(error);
-        }
-
-        error.textContent = message;
+        return messageElement;
     }
 
 
-    /*
-     * Remove validation errors
-     */
-    function clearErrors() {
+    /* =====================================================
+       AI CHATBOT RESPONSES
+    ===================================================== */
 
-        const errors =
-            contactForm.querySelectorAll(".error-message");
+    function getBotResponse(message) {
 
-        errors.forEach(error => {
-            error.remove();
-        });
+        const text = message.toLowerCase();
 
+        if (
+            text.includes("hello") ||
+            text.includes("hi") ||
+            text.includes("hey") ||
+            text.includes("salam")
+        ) {
+            return "Hello! 👋 Welcome to TechNova Solutions. How can I help you today?";
+        }
 
-        const inputs =
-            contactForm.querySelectorAll(
-                "input, select, textarea"
-            );
+        if (
+            text.includes("service") ||
+            text.includes("services")
+        ) {
+            return "We provide Web Development, Mobile App Development, Software Solutions, UI/UX Design, Cloud Solutions and Digital Services.";
+        }
 
-        inputs.forEach(input => {
-            input.style.borderColor = "";
-        });
+        if (
+            text.includes("website") ||
+            text.includes("web development")
+        ) {
+            return "Our Web Development service can create modern, responsive and professional websites for your business.";
+        }
+
+        if (
+            text.includes("mobile") ||
+            text.includes("app")
+        ) {
+            return "We can help you build modern and responsive mobile applications for Android and iOS.";
+        }
+
+        if (
+            text.includes("price") ||
+            text.includes("cost") ||
+            text.includes("pricing")
+        ) {
+            return "Pricing depends on your project requirements. Please contact TechNova Solutions for a customized quote.";
+        }
+
+        if (
+            text.includes("contact") ||
+            text.includes("email")
+        ) {
+            return "You can contact TechNova Solutions through the Contact page. We would be happy to discuss your project.";
+        }
+
+        if (
+            text.includes("project") ||
+            text.includes("portfolio")
+        ) {
+            return "You can explore our Projects section to see examples of our web, mobile and software solutions.";
+        }
+
+        if (
+            text.includes("about")
+        ) {
+            return "TechNova Solutions is focused on providing modern digital, software and technology solutions for businesses.";
+        }
+
+        if (
+            text.includes("thank") ||
+            text.includes("thanks")
+        ) {
+            return "You're welcome! 😊 Let me know if you need anything else.";
+        }
+
+        return "Thanks for your message! 😊 I can help with TechNova's services, websites, mobile apps, projects, pricing and contact information.";
     }
-
-
-    /*
-     * Form submission
-     */
-    contactForm.addEventListener(
-        "submit",
-        function (event) {
-
-            event.preventDefault();
-
-            clearErrors();
-
-            let isValid = true;
-
-
-            /* NAME */
-            const name =
-                nameInput.value.trim();
-
-            if (name.length < 2) {
-
-                showError(
-                    nameInput,
-                    "Please enter your full name."
-                );
-
-                isValid = false;
-            }
-
-
-            /* EMAIL */
-            const email =
-                emailInput.value.trim();
-
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!emailPattern.test(email)) {
-
-                showError(
-                    emailInput,
-                    "Please enter a valid email address."
-                );
-
-                isValid = false;
-            }
-
-
-            /* PHONE */
-            const phone =
-                phoneInput.value.trim();
-
-            if (phone !== "") {
-
-                const phonePattern =
-                    /^[0-9+\-\s()]{7,20}$/;
-
-                if (!phonePattern.test(phone)) {
-
-                    showError(
-                        phoneInput,
-                        "Please enter a valid phone number."
-                    );
-
-                    isValid = false;
-                }
-            }
-
-
-            /* SERVICE */
-            if (serviceInput.value === "") {
-
-                showError(
-                    serviceInput,
-                    "Please select a service."
-                );
-
-                isValid = false;
-            }
-
-
-            /* MESSAGE */
-            const message =
-                messageInput.value.trim();
-
-            if (message.length < 10) {
-
-                showError(
-                    messageInput,
-                    "Please enter at least 10 characters."
-                );
-
-                isValid = false;
-            }
-
-
-            /*
-             * If everything is valid,
-             * submit to Formspree.
-             */
-            if (isValid) {
-
-                contactForm.submit();
-
-            }
-
-        }
-    );
-}
-
-
-/* =====================================
-   5. BACK TO TOP BUTTON
-   ===================================== */
-
-const backToTop =
-    document.getElementById("back-to-top");
-
-if (backToTop) {
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 300) {
-
-            backToTop.classList.add("show");
-
-        } else {
-
-            backToTop.classList.remove("show");
-
-        }
-
-    });
-
-
-    backToTop.addEventListener("click", () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-}
-
-
-/* =====================================
-   6. SMOOTH SCROLL
-   ===================================== */
-
-document.querySelectorAll(
-    'a[href^="#"]'
-).forEach(anchor => {
-
-    anchor.addEventListener("click", function (event) {
-
-        const target =
-            document.querySelector(
-                this.getAttribute("href")
-            );
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
-
-});
-
-
-/* =====================================
-   7. PAGE LOAD ANIMATION
-   ===================================== */
-
-window.addEventListener("load", () => {
-
-    document.body.classList.add("page-loaded");
 
 });

@@ -2206,4 +2206,52 @@ input:focus-visible {
             0.01ms !important;
     }
 }
-```
+/* =====================================
+   CHATBOT MESSAGE COMPATIBILITY
+   ===================================== */
+
+.bot-message,
+.user-message {
+    max-width: 85%;
+    padding: 11px 14px;
+    border-radius: 16px;
+    font-size: 0.83rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    align-self: flex-start;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-bottom-left-radius: 5px;
+    box-shadow:
+        0 5px 15px rgba(99, 102, 241, 0.07);
+}
+
+.user-message {
+    align-self: flex-end;
+    color: white;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--purple),
+            var(--pink)
+        );
+    border-bottom-right-radius: 5px;
+}
+
+
+/* =====================================
+   MOBILE NAVIGATION FIX
+   ===================================== */
+
+@media (max-width: 768px) {
+
+    .nav-links.active {
+        display: flex;
+    }
+
+}
