@@ -1,9 +1,22 @@
-/* =========================================
+```css
+/* =====================================================
    TECHNOVA SOLUTIONS
    TESTIMONIALS PAGE
-========================================= */
+   style4.css
+   Responsive + Dark Mode + Mobile Menu
+===================================================== */
+
+
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
     margin: 0;
@@ -20,11 +33,15 @@ body {
     background: #f7f8ff;
     color: #202033;
     line-height: 1.7;
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
 }
 
-/* =========================================
+
+/* =====================================================
    HEADER
-========================================= */
+===================================================== */
 
 .header {
     position: sticky;
@@ -33,12 +50,18 @@ body {
 
     background: rgba(255, 255, 255, 0.96);
 
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.07);
+
+    transition:
+        background 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 .navbar {
     max-width: 1200px;
     margin: auto;
+
     padding: 18px 25px;
 
     display: flex;
@@ -46,7 +69,10 @@ body {
     justify-content: space-between;
 }
 
-/* Logo */
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo {
     color: #17172b;
@@ -54,13 +80,18 @@ body {
 
     font-size: 28px;
     font-weight: 800;
+
+    transition: color 0.3s ease;
 }
 
 .logo span {
     color: #6c4df6;
 }
 
-/* Navigation */
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .nav-links {
     display: flex;
@@ -70,12 +101,15 @@ body {
 
 .nav-links a {
     color: #333;
+
     text-decoration: none;
 
     font-size: 14px;
     font-weight: 500;
 
-    transition: 0.3s;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -83,7 +117,10 @@ body {
     color: #6c4df6;
 }
 
-/* Mobile Menu */
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
 
 .menu-toggle {
     display: none;
@@ -100,9 +137,20 @@ body {
     font-size: 23px;
 
     cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
-/* Theme Button */
+.menu-toggle:hover {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
 
 .theme-btn {
     width: 40px;
@@ -117,16 +165,19 @@ body {
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
 .theme-btn:hover {
     transform: rotate(20deg) scale(1.1);
 }
 
-/* =========================================
+
+/* =====================================================
    PAGE HERO
-========================================= */
+===================================================== */
 
 .page-hero {
     min-height: 420px;
@@ -189,9 +240,10 @@ body {
     color: #d9d7e8;
 }
 
-/* =========================================
+
+/* =====================================================
    SECTION TITLE
-========================================= */
+===================================================== */
 
 .section-title {
     max-width: 700px;
@@ -224,14 +276,17 @@ body {
     color: #777;
 }
 
-/* =========================================
+
+/* =====================================================
    TESTIMONIAL SECTION
-========================================= */
+===================================================== */
 
 .testimonials-section {
     padding: 100px 7%;
 
     background: #f7f8ff;
+
+    transition: background 0.4s ease;
 }
 
 .testimonial-grid {
@@ -246,9 +301,10 @@ body {
     gap: 28px;
 }
 
-/* =========================================
+
+/* =====================================================
    TESTIMONIAL CARD
-========================================= */
+===================================================== */
 
 .testimonial-card {
     position: relative;
@@ -264,7 +320,11 @@ body {
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.04);
 
-    transition: 0.4s ease;
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 .testimonial-card:hover {
@@ -276,7 +336,10 @@ body {
         0 20px 45px rgba(108, 77, 246, 0.15);
 }
 
-/* Quote */
+
+/* =====================================================
+   QUOTE
+===================================================== */
 
 .quote {
     position: absolute;
@@ -293,7 +356,10 @@ body {
     color: #eeeaff;
 }
 
-/* Stars */
+
+/* =====================================================
+   STARS
+===================================================== */
 
 .stars {
     margin-bottom: 18px;
@@ -305,7 +371,10 @@ body {
     letter-spacing: 3px;
 }
 
-/* Testimonial Text */
+
+/* =====================================================
+   TESTIMONIAL TEXT
+===================================================== */
 
 .testimonial-text {
     color: #666;
@@ -313,11 +382,14 @@ body {
     font-size: 14px;
 
     margin-bottom: 25px;
+
+    transition: color 0.4s ease;
 }
 
-/* =========================================
+
+/* =====================================================
    CLIENT
-========================================= */
+===================================================== */
 
 .client {
     display: flex;
@@ -329,6 +401,8 @@ body {
     padding-top: 20px;
 
     border-top: 1px solid #eee;
+
+    transition: border-color 0.4s ease;
 }
 
 .client-avatar {
@@ -366,14 +440,17 @@ body {
     font-size: 12px;
 }
 
-/* =========================================
+
+/* =====================================================
    STATISTICS
-========================================= */
+===================================================== */
 
 .testimonial-stats {
     padding: 80px 7%;
 
     background: white;
+
+    transition: background 0.4s ease;
 }
 
 .stats-container {
@@ -397,7 +474,10 @@ body {
 
     background: #f7f5ff;
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s ease,
+        background 0.4s ease,
+        box-shadow 0.3s ease;
 }
 
 .stat-card:hover {
@@ -427,9 +507,10 @@ body {
     font-size: 13px;
 }
 
-/* =========================================
+
+/* =====================================================
    CTA
-========================================= */
+===================================================== */
 
 .cta {
     padding: 90px 25px;
@@ -469,7 +550,9 @@ body {
 
     font-weight: 600;
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .secondary-btn {
@@ -485,9 +568,10 @@ body {
         0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* =========================================
+
+/* =====================================================
    FOOTER
-========================================= */
+===================================================== */
 
 .footer {
     padding: 70px 25px 20px;
@@ -559,9 +643,10 @@ body {
     border-top: 1px solid #302d43;
 }
 
-/* =========================================
+
+/* =====================================================
    DARK MODE
-========================================= */
+===================================================== */
 
 body.dark-mode {
     background: #10101a;
@@ -569,12 +654,28 @@ body.dark-mode {
     color: #f5f5f5;
 }
 
+
+/* Header */
+
 body.dark-mode .header {
     background: #181827;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.3);
 }
 
+
+/* Logo */
+
+body.dark-mode .logo {
+    color: #ffffff;
+}
+
+
+/* Navigation */
+
 body.dark-mode .nav-links a {
-    color: #ddd;
+    color: #dddddd;
 }
 
 body.dark-mode .nav-links a:hover,
@@ -582,27 +683,73 @@ body.dark-mode .nav-links a.active {
     color: #9a87ff;
 }
 
+
+/* Theme button */
+
+body.dark-mode .theme-btn {
+    background: #292744;
+
+    color: white;
+}
+
+
+/* Section */
+
 body.dark-mode .testimonials-section {
     background: #10101a;
 }
+
+
+/* Section heading */
+
+body.dark-mode .section-title h2 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .section-title p:last-child {
+    color: #aaa;
+}
+
+
+/* Cards */
 
 body.dark-mode .testimonial-card {
     background: #1c1c2b;
 
     border-color: #29293b;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .testimonial-card:hover {
+    border-color: #6c4df6;
 }
 
 body.dark-mode .testimonial-text {
-    color: #bbb;
+    color: #bbbbbb;
 }
+
+
+/* Quote */
+
+body.dark-mode .quote {
+    color: #36334e;
+}
+
+
+/* Client */
 
 body.dark-mode .client {
     border-color: #303044;
 }
 
 body.dark-mode .client p {
-    color: #aaa;
+    color: #aaaaaa;
 }
+
+
+/* Stats */
 
 body.dark-mode .testimonial-stats {
     background: #151522;
@@ -613,16 +760,24 @@ body.dark-mode .stat-card {
 }
 
 body.dark-mode .stat-card p {
-    color: #bbb;
+    color: #bbbbbb;
 }
 
-body.dark-mode .theme-btn {
-    background: #292744;
+
+/* Mobile menu dark mode */
+
+body.dark-mode .nav-links {
+    background: #181827;
 }
 
-/* =========================================
+body.dark-mode .nav-links a {
+    color: #dddddd;
+}
+
+
+/* =====================================================
    TABLET
-========================================= */
+===================================================== */
 
 @media (max-width: 1000px) {
 
@@ -643,26 +798,35 @@ body.dark-mode .theme-btn {
     }
 }
 
-/* =========================================
+
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media (max-width: 700px) {
 
     .navbar {
         position: relative;
+
+        padding: 15px 20px;
     }
+
+
+    /* Mobile button */
 
     .menu-toggle {
         display: block;
     }
+
+
+    /* Mobile navigation */
 
     .nav-links {
         display: none;
 
         position: absolute;
 
-        top: 75px;
+        top: 72px;
         left: 0;
 
         width: 100%;
@@ -673,15 +837,38 @@ body.dark-mode .theme-btn {
 
         flex-direction: column;
 
+        align-items: center;
+
         gap: 15px;
 
         box-shadow:
             0 15px 25px rgba(0, 0, 0, 0.1);
     }
 
-    .nav-links.show {
+
+    /* IMPORTANT:
+       JS uses .active */
+
+    .nav-links.active {
         display: flex;
     }
+
+
+    /* Mobile links */
+
+    .nav-links a {
+        font-size: 15px;
+    }
+
+
+    /* Mobile theme button */
+
+    .theme-btn {
+        margin-top: 5px;
+    }
+
+
+    /* Hero */
 
     .page-hero {
         min-height: 350px;
@@ -693,6 +880,9 @@ body.dark-mode .theme-btn {
         font-size: 38px;
     }
 
+
+    /* Testimonials */
+
     .testimonials-section,
     .testimonial-stats {
         padding: 70px 20px;
@@ -703,17 +893,29 @@ body.dark-mode .theme-btn {
         grid-template-columns: 1fr;
     }
 
+
+    /* Section title */
+
     .section-title h2 {
         font-size: 32px;
     }
+
+
+    /* Cards */
 
     .testimonial-card {
         padding: 30px 25px;
     }
 
+
+    /* CTA */
+
     .cta h2 {
         font-size: 30px;
     }
+
+
+    /* Footer */
 
     .footer-content {
         grid-template-columns: 1fr;
@@ -722,11 +924,16 @@ body.dark-mode .theme-btn {
 
         gap: 35px;
     }
+
+    .footer-content > div:nth-child(2) {
+        align-items: center;
+    }
 }
 
-/* =========================================
+
+/* =====================================================
    SMALL MOBILE
-========================================= */
+===================================================== */
 
 @media (max-width: 450px) {
 
@@ -749,4 +956,10 @@ body.dark-mode .theme-btn {
     .testimonial-card {
         padding: 25px 20px;
     }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
 }
+```
