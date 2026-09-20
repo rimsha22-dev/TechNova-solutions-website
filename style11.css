@@ -1,9 +1,20 @@
-```css
-/* ========================================
-   TechNova Solutions - Projects CSS
-======================================== */
+/* =====================================================
+   TECHNOVA SOLUTIONS
+   PROJECTS PAGE - style11.css
+   Dark Mode + Mobile Menu + Projects
+===================================================== */
 
-/* ---------- RESET ---------- */
+
+/* ===============================
+   GOOGLE FONT
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* ===============================
+   GENERAL
+================================ */
 
 * {
     margin: 0;
@@ -16,16 +27,10 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
     background: #f5f7fb;
-    color: #222;
+    color: #1f2937;
     transition: background 0.3s ease, color 0.3s ease;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }
 
 .container {
@@ -35,139 +40,144 @@ img {
 }
 
 
-/* ========================================
+/* ===============================
    HEADER
-======================================== */
+================================ */
 
 header {
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
     color: white;
-    padding: 30px 0;
+    padding: 35px 0;
     text-align: center;
+    position: relative;
+    transition: background 0.3s ease;
 }
 
 header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
+    font-size: 34px;
+    font-weight: 700;
 }
 
 header p {
-    font-size: 1rem;
-    opacity: 0.9;
+    margin-top: 5px;
+    font-size: 16px;
 }
 
 
-/* ========================================
+/* ===============================
    THEME BUTTON
-======================================== */
+================================ */
 
 #theme-toggle {
-    margin-top: 15px;
-    border: none;
-    background: white;
-    color: #222;
+    position: absolute;
+    top: 25px;
+    right: 5%;
     width: 45px;
     height: 45px;
+    border: none;
     border-radius: 50%;
-    cursor: pointer;
+    background: white;
+    color: #111827;
     font-size: 20px;
+    cursor: pointer;
     transition: 0.3s ease;
 }
 
 #theme-toggle:hover {
-    transform: rotate(20deg) scale(1.1);
+    transform: scale(1.1);
 }
 
 
-/* ========================================
-   NAVIGATION
-======================================== */
+/* ===============================
+   NAVBAR
+================================ */
 
 .navbar {
-    background: #ffffff;
-    min-height: 70px;
+    background: linear-gradient(135deg, #1d4ed8, #0891b2);
+    padding: 14px 0;
+    transition: background 0.3s ease;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5%;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .logo {
-    color: #2563eb;
-    font-size: 1.7rem;
-    font-weight: bold;
+    color: white;
+    font-size: 24px;
 }
+
+
+/* ===============================
+   NAV LINKS
+================================ */
 
 .nav-links {
     display: flex;
-    align-items: center;
     gap: 25px;
+    align-items: center;
 }
 
 .nav-links a {
+    color: white;
     text-decoration: none;
-    color: #222;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     transition: 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #2563eb;
+.nav-links a:hover,
+.nav-links a.active {
+    color: #fef08a;
 }
 
 
-/* ========================================
+/* ===============================
    MOBILE MENU BUTTON
-======================================== */
+================================ */
 
 .menu-toggle {
     display: none;
+    background: transparent;
     border: none;
-    background: #2563eb;
     color: white;
-    font-size: 24px;
-    padding: 8px 12px;
-    border-radius: 6px;
+    font-size: 28px;
     cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.menu-toggle:hover {
-    background: #7c3aed;
 }
 
 
-/* ========================================
-   PROJECTS SECTION
-======================================== */
+/* ===============================
+   PROJECT SECTION
+================================ */
 
 .projects-section {
-    padding: 80px 0;
+    padding: 70px 0;
     min-height: 70vh;
 }
 
 .projects-section h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: #2563eb;
+    font-size: 36px;
     margin-bottom: 10px;
 }
 
 .section-intro {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 50px;
-    color: #666;
+    margin: 0 auto 45px;
+    color: #6b7280;
 }
 
 
-/* ========================================
+/* ===============================
    PROJECT GRID
-======================================== */
+================================ */
 
 .projects-grid {
     display: grid;
@@ -176,240 +186,273 @@ header p {
 }
 
 
-/* ========================================
+/* ===============================
    PROJECT CARD
-======================================== */
+================================ */
 
 .project-card {
     background: white;
     border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
 }
 
 
-/* ========================================
-   PROJECT IMAGES
-======================================== */
+/* ===============================
+   PROJECT IMAGE
+================================ */
 
-.project-card img {
+.project-image {
     width: 100%;
-    height: 220px;
+    height: 240px;
+    overflow: hidden;
+    background: #e5e7eb;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 12px;
+}
+
+
+/* ===============================
+   PROJECT CONTENT
+================================ */
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    color: #6b7280;
+    line-height: 1.7;
     margin-bottom: 20px;
 }
 
 
-/* ========================================
-   PROJECT TITLE
-======================================== */
-
-.project-card h3 {
-    color: #2563eb;
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
-
-
-/* ========================================
-   PROJECT DESCRIPTION
-======================================== */
-
-.project-card p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-
-/* ========================================
+/* ===============================
    BUTTON
-======================================== */
+================================ */
 
 .btn {
     display: inline-block;
-    text-decoration: none;
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    padding: 11px 20px;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
     color: white;
-    padding: 11px 22px;
+    text-decoration: none;
     border-radius: 8px;
-    font-weight: bold;
+    font-weight: 500;
     transition: 0.3s ease;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-}
-
-.btn.clicked {
-    transform: scale(0.95);
+    transform: translateY(-2px);
 }
 
 
-/* ========================================
+/* ===============================
    FOOTER
-======================================== */
+================================ */
 
 footer {
     background: #111827;
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 30px 0;
 }
 
 footer p {
-    margin: 0;
+    margin: 7px 0;
+}
+
+.footer-email a {
+    color: #67e8f9;
+    text-decoration: none;
+}
+
+.footer-email a:hover {
+    text-decoration: underline;
 }
 
 
-/* ========================================
+/* ===============================
    BACK TO TOP
-======================================== */
+================================ */
 
 #back-to-top {
     position: fixed;
     right: 25px;
     bottom: 25px;
+
     width: 45px;
     height: 45px;
+
     border: none;
     border-radius: 50%;
+
     background: #2563eb;
     color: white;
-    font-size: 22px;
+
+    font-size: 20px;
     cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s ease;
-    z-index: 999;
-}
 
-#back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-#back-to-top:hover {
-    background: #7c3aed;
-    transform: translateY(-4px);
+    display: none;
 }
 
 
-/* ========================================
+/* =====================================================
    DARK MODE
-======================================== */
+===================================================== */
 
 body.dark-mode {
-    background: #111827;
-    color: #f9fafb;
+    background: #0f172a;
+    color: #f1f5f9;
 }
+
+
+/* Header */
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #111827, #164e63);
+}
+
+
+/* Navbar */
 
 body.dark-mode .navbar {
-    background: #1f2937;
+    background: linear-gradient(135deg, #111827, #0f3d4a);
 }
 
-body.dark-mode .nav-links a {
-    color: #f9fafb;
+
+/* Theme button */
+
+body.dark-mode #theme-toggle {
+    background: #1e293b;
+    color: white;
 }
 
-body.dark-mode .nav-links a:hover {
-    color: #60a5fa;
-}
 
-body.dark-mode .logo {
-    color: #60a5fa;
-}
+/* Intro text */
 
 body.dark-mode .section-intro {
-    color: #d1d5db;
+    color: #cbd5e1;
 }
+
+
+/* Project cards */
 
 body.dark-mode .project-card {
-    background: #1f2937;
-}
-
-body.dark-mode .project-card p {
-    color: #d1d5db;
-}
-
-body.dark-mode .project-card h3 {
-    color: #60a5fa;
+    background: #1e293b;
+    color: #f1f5f9;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
 
-/* ========================================
-   TABLET & MOBILE
-======================================== */
+/* Project paragraphs */
+
+body.dark-mode .project-content p {
+    color: #cbd5e1;
+}
+
+
+/* Image background */
+
+body.dark-mode .project-image {
+    background: #334155;
+}
+
+
+/* Footer */
+
+body.dark-mode footer {
+    background: #020617;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
 
 @media (max-width: 768px) {
 
     header {
-        padding: 25px 0;
+        padding: 28px 0;
     }
 
     header h1 {
-        font-size: 1.8rem;
+        font-size: 26px;
     }
 
     header p {
-        font-size: 0.95rem;
+        font-size: 14px;
+    }
+
+    #theme-toggle {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
     }
 
 
-    /* Navigation */
-
-    .navbar {
-        min-height: 65px;
-        padding: 0 5%;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-
-
-    /* Show hamburger */
+    /* Mobile menu button */
 
     .menu-toggle {
         display: block;
     }
 
 
-    /* Mobile navigation */
+    /* Mobile nav */
 
     .nav-links {
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: white;
         display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #1d4ed8;
+
         flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        gap: 18px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        gap: 0;
+
+        z-index: 1000;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    body.dark-mode .nav-links {
-        background: #1f2937;
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
     }
 
-    .nav-links a {
-        font-size: 1rem;
+    .nav-container {
+        position: relative;
+    }
+
+
+    /* Dark mobile menu */
+
+    body.dark-mode .nav-links {
+        background: #111827;
     }
 
 
@@ -417,118 +460,41 @@ body.dark-mode .project-card h3 {
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
     }
 
     .projects-section {
-        padding: 55px 0;
+        padding: 50px 0;
     }
 
     .projects-section h2 {
-        font-size: 2rem;
+        font-size: 30px;
     }
 
-    .section-intro {
-        margin-bottom: 35px;
-        padding: 0 10px;
-    }
-
-    .project-card {
-        padding: 20px;
-    }
-
-    .project-card img {
-        height: 200px;
+    .project-image {
+        height: 220px;
     }
 }
 
 
-/* ========================================
-   SMALL MOBILE DEVICES
-======================================== */
+/* ===============================
+   SMALL MOBILE
+================================ */
 
 @media (max-width: 480px) {
 
-    header {
-        padding: 22px 0;
-    }
-
     header h1 {
-        font-size: 1.5rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
-    }
-
-
-    /* Navigation */
-
-    .navbar {
-        min-height: 60px;
+        font-size: 22px;
     }
 
     .logo {
-        font-size: 1.3rem;
-    }
-
-    .menu-toggle {
-        font-size: 21px;
-        padding: 7px 10px;
-    }
-
-    .nav-links {
-        top: 60px;
-    }
-
-
-    /* Projects */
-
-    .projects-section {
-        padding: 45px 0;
+        font-size: 20px;
     }
 
     .projects-section h2 {
-        font-size: 1.8rem;
+        font-size: 26px;
     }
 
-    .section-intro {
-        font-size: 0.95rem;
-    }
-
-    .project-card {
-        padding: 18px;
-        border-radius: 12px;
-    }
-
-    .project-card img {
-        height: 180px;
-    }
-
-    .project-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .project-card p {
-        font-size: 0.95rem;
-    }
-
-
-    /* Full width button */
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-
-    /* Back to top */
-
-    #back-to-top {
-        right: 15px;
-        bottom: 15px;
-        width: 42px;
-        height: 42px;
+    .project-content {
+        padding: 20px;
     }
 }
-```
